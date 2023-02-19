@@ -2,6 +2,7 @@ package com.rusefi;
 
 import com.rusefi.newparse.ParseState;
 import com.rusefi.output.*;
+import com.rusefi.pinout.PinoutLogic;
 import com.rusefi.trigger.TriggerWheelTSLogic;
 import com.rusefi.util.SystemOut;
 
@@ -143,11 +144,9 @@ public class ConfigDefinition {
                     break;
                 case KEY_BOARD_NAME:
                     String boardName = args[i + 1];
-                    pinoutLogic = PinoutLogic.create(boardName, PinoutLogic.CONFIG_BOARDS);
-                    if (pinoutLogic != null) {
-                        for (String inputFile : pinoutLogic.getInputFiles())
-                            state.addInputFile(inputFile);
-                    }
+                    pinoutLogic = PinoutLogic.create(boardName);
+                    for (String inputFile : pinoutLogic.getInputFiles())
+                        state.addInputFile(inputFile);
                     break;
             }
         }
@@ -175,7 +174,7 @@ public class ConfigDefinition {
         new TriggerWheelTSLogic().execute(triggersInputFolder, state.getVariableRegistry());
 
         if (pinoutLogic != null) {
-            pinoutLogic.registerBoardSpecificPinNames(state.getVariableRegistry(), state, parseState);
+            pinoutLogic.registerBoardSpecificPinNames(state.getVariableRegistry(), parseState, state.getEnumsReader());
         }
 
         // Parse the input files

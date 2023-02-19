@@ -8,11 +8,13 @@
 #pragma once
 
 #define BOARD_ID_154hyundai_c 10
+#define BOARD_ID_2chan_d 107
 
 void hellenWbo();
 
 void setHellen144LedPins();
 void setHellen176LedPins();
+void setHellenMegaEnPin();
 
 void setHellenCan();
 
@@ -211,6 +213,15 @@ void detectHellenBoardType();
 #define H_SPI3_SCK Gpio::C10
 #define H_SPI3_CS Gpio::A15
 
+static void setHellenSdCardSpi1() {
+	engineConfiguration->sdCardSpiDevice = SPI_DEVICE_1;
+	engineConfiguration->spi1mosiPin = H_SPI1_MOSI;
+	engineConfiguration->spi1misoPin = H_SPI1_MISO;
+	engineConfiguration->spi1sckPin = H_SPI1_SCK;
+	engineConfiguration->sdCardCsPin = H_SPI1_CS1;
+	engineConfiguration->is_enabled_spi_1 = true;
+}
+
 static void setHellenSdCardSpi2() {
 	engineConfiguration->sdCardSpiDevice = SPI_DEVICE_2;
 	engineConfiguration->spi2mosiPin = H_SPI2_MOSI;
@@ -227,4 +238,12 @@ static void setHellenSdCardSpi3() {
 	engineConfiguration->spi3sckPin = H_SPI3_SCK;
 	engineConfiguration->sdCardCsPin = H_SPI3_CS;
 	engineConfiguration->is_enabled_spi_3 = true;
+}
+
+// *pullups* files CLT R211 IAT R213
+#define HELLEN_DEFAULT_AT_PULLUP 4700
+
+static void setDefaultHellenAtPullUps(){
+	engineConfiguration->clt.config.bias_resistor = HELLEN_DEFAULT_AT_PULLUP;
+	engineConfiguration->iat.config.bias_resistor = HELLEN_DEFAULT_AT_PULLUP;
 }

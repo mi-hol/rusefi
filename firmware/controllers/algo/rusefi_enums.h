@@ -107,7 +107,8 @@ typedef enum  __attribute__ ((__packed__)) {
 	 */
 	VVT_HONDA_K_EXHAUST = 16,
 
-	VVT_MITSUBISHI_4G63 = 17,
+	VVT_MITSUBISHI_4G9x = 17,
+	VVT_MITSUBISHI_4G63 = 18,
 
 } vvt_mode_e;
 
@@ -165,6 +166,11 @@ typedef enum __attribute__ ((__packed__)) {
 	IM_MANUAL = 1,
 
 } idle_mode_e;
+
+enum class SentEtbType : uint8_t {
+	GM_TYPE_1 = 0,
+	FORD_TYPE_1 = 1,
+};
 
 typedef enum __attribute__ ((__packed__)) {
 	/**
@@ -563,13 +569,17 @@ typedef enum __attribute__ ((__packed__)) {
 	GPPWM_GppwmOutput4 = 21,
 	GPPWM_LuaGauge1 = 22,
 	GPPWM_LuaGauge2 = 23,
+	GPPWM_Rpm = 24,
 } gppwm_channel_e;
 
 typedef enum __attribute__ ((__packed__)) {
-	B100KBPS = 0, // 100kbps
-	B250KBPS = 1, // 250kbps
-	B500KBPS = 2, // 500kbps
-	B1MBPS = 3, // 1Mbps
+	B50KBPS = 0, // 50kbps
+	B83KBPS = 1, // 83.33kbps
+	B100KBPS = 2, // 100kbps
+	B125KBPS = 3, // 125kbps
+	B250KBPS = 4, // 250kbps
+	B500KBPS = 5, // 500kbps
+	B1MBPS = 6, // 1Mbps
 } can_baudrate_e;
 
 typedef enum __attribute__ ((__packed__)) {
@@ -592,14 +602,12 @@ typedef enum __attribute__ ((__packed__)) {
 } load_override_e;
 
 typedef enum __attribute__ ((__packed__)) {
-// todo: rename to HB_None?
-	ETB_None = 0,
-	ETB_Throttle1 = 1,
-	ETB_Throttle2 = 2,
-	ETB_IdleValve = 3,
-	ETB_Wastegate = 4,
-// todo: rename to dc_function_e? rename to hbrg_function_e?
-} etb_function_e;
+	DC_None = 0,
+	DC_Throttle1 = 1,
+	DC_Throttle2 = 2,
+	DC_IdleValve = 3,
+	DC_Wastegate = 4,
+} dc_function_e;
 
 typedef enum __attribute__ ((__packed__)) {
 	STEPPER_FULL = 0,

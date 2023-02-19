@@ -53,7 +53,6 @@ static void setupDefaultSensorInputs() {
     engineConfiguration->vehicleSpeedSensorInputPin = H144_IN_VSS;
 
 	setTPS1Inputs(H144_IN_TPS, H144_IN_AUX1);
-	engineConfiguration->useETBforIdleControl = true;
 
 	setPPSCalibration(0.73, 4.0, 0.34, 1.86);
 
@@ -76,8 +75,7 @@ void setBoardConfigOverrides() {
 
 	setHellenSdCardSpi2();
 
-	engineConfiguration->clt.config.bias_resistor = 4700;
-	engineConfiguration->iat.config.bias_resistor = 4700;
+    setDefaultHellenAtPullUps();
 
 	// trigger inputs
 	engineConfiguration->triggerInputPins[1] = Gpio::Unassigned;
@@ -171,7 +169,7 @@ void setBoardDefaultConfiguration() {
 	// "required" hardware is done - set some reasonable defaults
 	setupDefaultSensorInputs();
 
-	engineConfiguration->etbFunctions[1] = ETB_Wastegate;
+	engineConfiguration->etbFunctions[1] = DC_Wastegate;
 
 	// Some sensible defaults for other options
 	setCrankOperationMode();

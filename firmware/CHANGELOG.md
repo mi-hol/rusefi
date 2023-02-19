@@ -28,6 +28,18 @@ Release template (copy/paste this for new release):
 
 ## Unreleased
 
+### Added
+- Rearrange & simplify trigger configuration UI #5077
+
+### Breaking Changes
+ - rusefi_default_bundle.zip was replaced by rusefi_bundle_f407-discovery.zip #5078
+
+### Fixed
+ - Antilag switch pin mode was ignored #5036
+ - 50/83.3/125kbit CAN #5072
+
+## February 2023 Release - "Day 346"
+
 ### Breaking Changes
  - Change ignition IAT correction table to use IAT/load #4948
 
@@ -48,6 +60,7 @@ Release template (copy/paste this for new release):
  - multi-line tooltips in TS #4927
  - Negative temperature values for IAT Corr table #4941
  - DC wastegate #4965
+ - [LSE] RTC (SD log dates) #4556
 
 ## December 2022 Release - "Day 289"
 

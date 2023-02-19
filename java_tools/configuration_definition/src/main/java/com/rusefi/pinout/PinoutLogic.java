@@ -1,6 +1,7 @@
-package com.rusefi;
+package com.rusefi.pinout;
 
 import com.devexperts.logging.Logging;
+import com.rusefi.*;
 import com.rusefi.enum_reader.Value;
 import com.rusefi.newparse.DefinitionsState;
 import com.rusefi.newparse.parsing.Definition;
@@ -19,22 +20,18 @@ import static com.rusefi.output.JavaSensorsConsumer.quote;
 public class PinoutLogic {
     private static final Logging log = getLogging(PinoutLogic.class);
 
-    public static final String CONFIG_BOARDS = "config/boards/";
-    private static final String CONNECTORS = "/connectors";
+    static final String CONNECTORS = "/connectors";
     private static final String NONE = "NONE";
     private static final String QUOTED_NONE = quote(NONE);
     public static final String QUOTED_INVALID = quote(VariableRegistry.INVALID);
 
-    private final File[] boardYamlFiles;
-    private final String boardName;
     private final ArrayList<PinState> globalList = new ArrayList<>();
     private final Map</*id*/String, /*tsName*/String> tsNameById = new TreeMap<>();
     private final StringBuilder header = new StringBuilder("//DO NOT EDIT MANUALLY, let automation work hard.\n\n");
+    private final BoardInputs boardInputs;
 
-    public PinoutLogic(String boardName, File[] boardYamlFiles) {
-        log.info(boardName + ": " + Arrays.toString(boardYamlFiles));
-        this.boardName = boardName;
-        this.boardYamlFiles = boardYamlFiles;
+    public PinoutLogic(BoardInputs boardInputs) {
+        this.boardInputs = boardInputs;
     }
 
     private static Map.Entry<String, Value> find(EnumsReader.EnumState enumList, String id) {
@@ -46,7 +43,7 @@ public class PinoutLogic {
         return null;
     }
 
-    private static void registerPins(String boardName, ArrayList<PinState> listPins, VariableRegistry registry, ReaderStateImpl state, DefinitionsState parseState) {
+    private static void registerPins(String boardName, ArrayList<PinState> listPins, VariableRegistry registry, DefinitionsState parseState, EnumsReader enumsReader) {
         if (listPins == null || listPins.isEmpty()) {
             return;
         }
@@ -64,7 +61,7 @@ public class PinoutLogic {
             }
             PinType listPinType = PinType.find(className);
             String pinType = listPinType.getPinType();
-            EnumsReader.EnumState enumList = state.getEnumsReader().getEnums().get(pinType);
+            EnumsReader.EnumState enumList = enumsReader.getEnums().get(pinType);
             Objects.requireNonNull(enumList, "Enum for " + pinType);
             Map.Entry<String, Value> kv = find(enumList, id);
             if (kv == null) {
@@ -83,7 +80,7 @@ public class PinoutLogic {
             String outputEnumName = namePinType.getOutputEnumName();
             String pinType = namePinType.getPinType();
             String nothingName = namePinType.getNothingName();
-            EnumsReader.EnumState enumList = state.getEnumsReader().getEnums().get(pinType);
+            EnumsReader.EnumState enumList = enumsReader.getEnums().get(pinType);
             EnumPair pair = enumToOptionsList(nothingName, enumList, kv.getValue());
             if (pair.getSimpleForm().length() > 0) {
                 // we seem to be here if specific pin category like switch_inputs has no pins
@@ -120,10 +117,6 @@ public class PinoutLogic {
         }
         String keyValueForm = VariableRegistry.getHumanSortedTsKeyValueString(pinMap);
         return new EnumPair(keyValueForm, simpleForm.toString());
-
-        //        String shorterForm = smartForm.length() < simpleForm.length() ? smartForm.toString() : simpleForm.toString();
-//
-//        return new EnumPair(shorterForm, simpleForm.toString());
     }
 
     private static void appendCommaIfNeeded(StringBuilder sb) {
@@ -143,27 +136,30 @@ public class PinoutLogic {
     }
 
     @SuppressWarnings("unchecked")
-    private void readMetaInfo(File yamlFile) throws IOException {
+    private void readMetaInfo(String yamlName, Reader reader) {
         Yaml yaml = new Yaml();
-        Map<String, Object> yamlData = yaml.load(new FileReader(yamlFile));
+        Map<String, Object> yamlData = yaml.load(reader);
         if (yamlData == null) {
-            SystemOut.println("Null yaml for " + yamlFile);
+            SystemOut.println("Null yaml for " + yamlName);
             return;
         }
         List<Map<String, Object>> data = (List<Map<String, Object>>) yamlData.get("pins");
         if (data == null) {
-            SystemOut.println("Null yaml for " + yamlFile);
+            SystemOut.println("Null yaml for " + yamlName);
             return;
         }
-        log.info("Got from " + yamlFile + ": " +  data);
+        log.info("Got from " + yamlName + ": " +  data);
         Objects.requireNonNull(data, "data");
         for (Map<String, Object> pin : data) {
             Object pinId = pin.get("id");
             Object pinClass = pin.get("class");
             Object pinName = pin.get("pin");
-            String pinTsName = (String) pin.get("ts_name");
+            Object pinTsName = pin.get("ts_name");
             if (pinId == null || pinClass == null || pinTsName == null) {
                 continue;
+            }
+            if (pinName != null) {
+                pinTsName = pinTsName.toString().replace("___", pinName.toString());
             }
             if (pinId instanceof ArrayList) {
                 ArrayList<String> pinIds = (ArrayList<String>) pinId;
@@ -174,14 +170,14 @@ public class PinoutLogic {
                     throw new IllegalStateException(pinName + ": id array length should match class array length: " + pinId + " vs " + pinClassArray);
                 for (int i = 0; i < pinIds.size(); i++) {
                     String id = pinIds.get(i);
-                    addPinToList(id, pinTsName, pinClassArray.get(i));
+                    addPinToList(id, (String) pinTsName, pinClassArray.get(i));
                 }
             } else if (pinId instanceof String) {
                 String pinIdString = (String) pinId;
                 if (pinIdString.length() == 0) {
                     throw new IllegalStateException("Unexpected empty ID field");
                 }
-                addPinToList(pinIdString, pinTsName, (String) pinClass);
+                addPinToList(pinIdString, (String) pinTsName, (String) pinClass);
             } else {
                 throw new IllegalStateException("Unexpected type of ID field: " + pinId.getClass().getSimpleName());
             }
@@ -196,35 +192,20 @@ public class PinoutLogic {
         PinState thisPin = new PinState(id, pinTsName, pinClass);
         globalList.add(thisPin);
     }
-/*
-    public static void main(String[] args) throws IOException {
-        String boardName = "hellen-gm-e67";
-        PinoutLogic logic = create(boardName,"../../firmware/config/boards/hellen/");
-        logic.readFiles();
-        log.info(logic.toString());
 
-        registerPins(boardName, logic.globalList, new VariableRegistry(), new ReaderState());
+    public static PinoutLogic create(String boardName) {
+        return new PinoutLogic(new FileSystemBoardInputsImpl(boardName));
     }
-*/
 
-    public static PinoutLogic create(String boardName, String rootFolder) {
-        String dirPath = rootFolder + boardName + PinoutLogic.CONNECTORS;
-        File dirName = new File(dirPath);
-        FilenameFilter filter = (f, name) -> name.endsWith(".yaml");
-        File[] boardYamlFiles = dirName.listFiles(filter);
-        if (boardYamlFiles == null) {
-            log.info("No yaml files in " + dirPath);
-            return null;
+    public void registerBoardSpecificPinNames(VariableRegistry registry, DefinitionsState parseState, EnumsReader enumsReader) throws IOException {
+        if (boardInputs.getBoardYamlKeys().isEmpty()) {
+            // we have a board without yaml so no reason to generate board-specific .cpp file
+            return;
         }
-        Arrays.sort(boardYamlFiles);
-        return new PinoutLogic(boardName, boardYamlFiles);
-    }
-
-    public void registerBoardSpecificPinNames(VariableRegistry registry, ReaderStateImpl state, DefinitionsState parseState) throws IOException {
         readFiles();
-        registerPins(boardName, globalList, registry, state, parseState);
+        registerPins(boardInputs.getName(), globalList, registry, parseState, enumsReader);
 
-        try (FileWriter getTsNameByIdFile = new FileWriter(PinoutLogic.CONFIG_BOARDS + boardName + PinoutLogic.CONNECTORS + File.separator + "generated_ts_name_by_pin.cpp")) {
+        try (Writer getTsNameByIdFile = boardInputs.getWriter()) {
             getTsNameByIdFile.append(header);
 
             getTsNameByIdFile.append("#include \"pch.h\"\n\n");
@@ -246,20 +227,18 @@ public class PinoutLogic {
     }
 
     private void readFiles() throws IOException {
-        for (File yamlFile : boardYamlFiles) {
+        for (Object yamlFile : boardInputs.getBoardYamlKeys()) {
             header.append("// auto-generated by PinoutLogic.java based on " + yamlFile + "\n");
-            readMetaInfo(yamlFile);
+            readMetaInfo(yamlFile.toString(), boardInputs.getReader(yamlFile));
         }
-        log.info("Got from " + boardYamlFiles.length + " file(s): " + this);
+        log.info("Got from " + boardInputs.getBoardYamlKeys().size() + " file(s): " + this);
     }
 
+    /**
+     * @return list of affected files so that we can generate total unique ID
+     */
     public List<String> getInputFiles() {
-        List<String> result = new ArrayList<>();
-        for (File yamlFile : boardYamlFiles) {
-            result.add(PinoutLogic.CONFIG_BOARDS + boardName + PinoutLogic.CONNECTORS +
-                    File.separator + yamlFile.getName());
-        }
-        return result;
+        return boardInputs.getInputFiles();
     }
 
     private static class PinState {
@@ -301,7 +280,7 @@ public class PinoutLogic {
     @Override
     public String toString() {
         return "PinoutLogic{" +
-                "boardName='" + boardName + '\'' +
+                "boardName='" + boardInputs.getName() + '\'' +
                 ", globalList=" + globalList +
                 ", tsNameById=" + tsNameById +
                 '}';

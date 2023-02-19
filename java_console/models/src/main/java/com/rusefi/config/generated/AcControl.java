@@ -1,6 +1,6 @@
 package com.rusefi.config.generated;
 
-// this file was generated automatically by rusEFI tool ConfigDefinition.jar based on (unknown script) controllers/actuators/ac_control.txt Sat Jan 21 02:47:02 UTC 2023
+// this file was generated automatically by rusEFI tool ConfigDefinition.jar based on (unknown script) controllers/actuators/ac_control.txt Sun Feb 19 03:53:01 UTC 2023
 
 // by class com.rusefi.output.FileJavaFieldsConsumer
 import com.rusefi.config.*;
@@ -98,12 +98,13 @@ public class AcControl {
 	public static final int ETB_BIAS_CURVE_LENGTH = 8;
 	public static final int ETB_COUNT = 2;
 	public static final int ETB_HW_MAX_FREQUENCY = 3000;
-	public static final int FLASH_DATA_VERSION = 10018;
+	public static final int FLASH_DATA_VERSION = 10020;
 	public static final int FUEL_LEVEL_TABLE_COUNT = 8;
 	public static final int FUEL_LOAD_COUNT = 16;
 	public static final int FUEL_RPM_COUNT = 16;
 	public static final int GAP_TRACKING_LENGTH = 18;
 	public static final String GAUGE_CATEGORY_BOOST_CONTROL = "Boost Control";
+	public static final String GAUGE_CATEGORY_ETB = "ETB more";
 	public static final String GAUGE_CATEGORY_FUEL_MATH = "Fuel: math";
 	public static final String GAUGE_CATEGORY_TIMING = "Timing";
 	public static final String GAUGE_COIL_DWELL_TIME = "dwell: coil charge time";
@@ -403,17 +404,17 @@ public class AcControl {
 	public static final int VM_VVT_INACTIVE = 0;
 	public static final int VR_THRESHOLD_COUNT = 2;
 	public static final int WWAE_TABLE_SIZE = 8;
-	public static final Field ACBUTTONSTATE = Field.create("ACBUTTONSTATE", 0, FieldType.BIT, 0).setBaseOffset(924);
-	public static final Field M_ACENABLED = Field.create("M_ACENABLED", 0, FieldType.BIT, 1).setBaseOffset(924);
-	public static final Field ENGINETOOSLOW = Field.create("ENGINETOOSLOW", 0, FieldType.BIT, 2).setBaseOffset(924);
-	public static final Field ENGINETOOFAST = Field.create("ENGINETOOFAST", 0, FieldType.BIT, 3).setBaseOffset(924);
-	public static final Field NOCLT = Field.create("NOCLT", 0, FieldType.BIT, 4).setBaseOffset(924);
-	public static final Field ENGINETOOHOT = Field.create("ENGINETOOHOT", 0, FieldType.BIT, 5).setBaseOffset(924);
-	public static final Field TPSTOOHIGH = Field.create("TPSTOOHIGH", 0, FieldType.BIT, 6).setBaseOffset(924);
-	public static final Field ISDISABLEDBYLUA = Field.create("ISDISABLEDBYLUA", 0, FieldType.BIT, 7).setBaseOffset(924);
-	public static final Field ACCOMPRESSORSTATE = Field.create("ACCOMPRESSORSTATE", 0, FieldType.BIT, 8).setBaseOffset(924);
-	public static final Field LATEST_USAGE_AC_CONTROL = Field.create("LATEST_USAGE_AC_CONTROL", 4, FieldType.INT).setScale(1.0).setBaseOffset(924);
-	public static final Field ACSWITCHLASTCHANGETIMEMS = Field.create("ACSWITCHLASTCHANGETIMEMS", 8, FieldType.INT).setScale(1.0).setBaseOffset(924);
+	public static final Field ACBUTTONSTATE = Field.create("ACBUTTONSTATE", 0, FieldType.BIT, 0).setBaseOffset(956);
+	public static final Field M_ACENABLED = Field.create("M_ACENABLED", 0, FieldType.BIT, 1).setBaseOffset(956);
+	public static final Field ENGINETOOSLOW = Field.create("ENGINETOOSLOW", 0, FieldType.BIT, 2).setBaseOffset(956);
+	public static final Field ENGINETOOFAST = Field.create("ENGINETOOFAST", 0, FieldType.BIT, 3).setBaseOffset(956);
+	public static final Field NOCLT = Field.create("NOCLT", 0, FieldType.BIT, 4).setBaseOffset(956);
+	public static final Field ENGINETOOHOT = Field.create("ENGINETOOHOT", 0, FieldType.BIT, 5).setBaseOffset(956);
+	public static final Field TPSTOOHIGH = Field.create("TPSTOOHIGH", 0, FieldType.BIT, 6).setBaseOffset(956);
+	public static final Field ISDISABLEDBYLUA = Field.create("ISDISABLEDBYLUA", 0, FieldType.BIT, 7).setBaseOffset(956);
+	public static final Field ACCOMPRESSORSTATE = Field.create("ACCOMPRESSORSTATE", 0, FieldType.BIT, 8).setBaseOffset(956);
+	public static final Field LATEST_USAGE_AC_CONTROL = Field.create("LATEST_USAGE_AC_CONTROL", 4, FieldType.INT).setScale(1.0).setBaseOffset(956);
+	public static final Field ACSWITCHLASTCHANGETIMEMS = Field.create("ACSWITCHLASTCHANGETIMEMS", 8, FieldType.INT).setScale(1.0).setBaseOffset(956);
 	public static final Field[] VALUES = {
 	ACBUTTONSTATE,
 	M_ACENABLED,

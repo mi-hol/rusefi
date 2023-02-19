@@ -1,6 +1,6 @@
 #include "global.h"
 #include "engine_types.h"
-// was generated automatically by rusEFI tool  from engine_types.h // by enum2string.jar tool on Tue Jan 17 09:29:39 UTC 2023
+// was generated automatically by rusEFI tool  from engine_types.h // by enum2string.jar tool on Fri Feb 17 04:23:43 UTC 2023
 // see also gen_config_and_enums.bat
 
 
@@ -157,6 +157,8 @@ case CITROEN_TU3JP:
   return "CITROEN_TU3JP";
 case DEFAULT_FRANKENSO:
   return "DEFAULT_FRANKENSO";
+case DISCOVERY_PDM:
+  return "DISCOVERY_PDM";
 case DODGE_NEON_1995:
   return "DODGE_NEON_1995";
 case DODGE_NEON_2003_CRANK:
@@ -167,8 +169,6 @@ case EEPROM_BENCH_ENGINE:
   return "EEPROM_BENCH_ENGINE";
 case ETB_BENCH_ENGINE:
   return "ETB_BENCH_ENGINE";
-case ET_UNUSED96:
-  return "ET_UNUSED96";
 case ET_UNUSED97:
   return "ET_UNUSED97";
 case ET_UNUSED98:
@@ -349,10 +349,10 @@ case TLE8888_BENCH_ENGINE:
   return "TLE8888_BENCH_ENGINE";
 case TOYOTA_2JZ_GTE_VVTi:
   return "TOYOTA_2JZ_GTE_VVTi";
-case UNUSED_38:
-  return "UNUSED_38";
 case VW_ABA:
   return "VW_ABA";
+case WASTEGATE_PROTEUS_TEST:
+  return "WASTEGATE_PROTEUS_TEST";
   }
  return NULL;
 }
@@ -438,10 +438,10 @@ case TT_MIATA_VVT:
   return "TT_MIATA_VVT";
 case TT_MITSUBISHI:
   return "TT_MITSUBISHI";
-case TT_MITSU_BOTH_BOTH:
-  return "TT_MITSU_BOTH_BOTH";
-case TT_MITSU_ONLY_TOP_BOTH_FRONTS:
-  return "TT_MITSU_ONLY_TOP_BOTH_FRONTS";
+case TT_MITSU_4G63_CAM:
+  return "TT_MITSU_4G63_CAM";
+case TT_MITSU_4G9x_CAM:
+  return "TT_MITSU_4G9x_CAM";
 case TT_NISSAN_MR18_CAM_VVT:
   return "TT_NISSAN_MR18_CAM_VVT";
 case TT_NISSAN_MR18_CRANK:

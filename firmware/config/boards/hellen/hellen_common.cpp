@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "hellen_meta.h"
 
+
+static OutputPin megaEn;
+
 void hellenWbo() {
 	engineConfiguration->enableAemXSeries = true;
 }
@@ -28,6 +31,15 @@ void setHellen176LedPins() {
 #endif /* EFI_COMMUNICATION_PIN */
 	engineConfiguration->runningLedPin = Gpio::H9;  // green
 	engineConfiguration->warningLedPin = Gpio::H11; // yellow
+}
+
+void setHellenMegaEnPin() {
+    static bool initialized = false;
+    if (!initialized) {
+        initialized = true;
+	    megaEn.initPin("mm-EN", H144_GP8); // OUT_PWR_EN
+	    megaEn.setValue(1);
+	}
 }
 
 // this should be called before setHellenXXXLedPins()

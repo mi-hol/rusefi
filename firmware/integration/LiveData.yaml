@@ -129,9 +129,21 @@ Usages:
   - name: electronic_throttle
     java: ElectronicThrottle.java
     folder: controllers/actuators
+    prepend: integration/rusefi_config.txt
     output_name: [ "etb1", "etb2" ]
 
   - name: wideband_state
     java: WidebandController.java
     folder: controllers/sensors/
     output_name: [ "wb1", "wb2" ]
+
+  - name: dc_motors
+    java: DcMotors.java
+    folder: controllers/actuators
+    prepend: integration/rusefi_config.txt
+    constexpr: "engine->dc_motors"
+
+  - name: sent_state
+    java: SentState.java
+    folder: controllers/sensors/
+    prepend: integration/rusefi_config.txt
