@@ -2,7 +2,7 @@
 
 !
 ! this https://en.wikipedia.org/wiki/God_object is DEPRECATED
-! the dream is to move many or most of the state out into smaller structures/classes
+! the dream is to move many or most of the state out into smaller structures/classes like electronic_throttle.txt
 ! See also LiveData.yaml
 !
 
@@ -311,6 +311,7 @@ uint16_t rpmAcceleration;dRPM;"RPM/s",1, 0, 0, 5, 2
 	pid_status_s idleStatus
 	pid_status_s etbStatus
 	pid_status_s boostStatus
+	pid_status_s wastegateDcStatus
 
 	pid_status_s[CAM_INPUTS_COUNT iterate] vvtStatus
 
@@ -321,6 +322,8 @@ uint16_t rpmAcceleration;dRPM;"RPM/s",1, 0, 0, 5, 2
 
 	int16_t[LUA_DIGITAL_INPUT_COUNT iterate] autoscale rawAnalogInput;;"V",{1/@@PACK_MULT_VOLTAGE@@}, 0, 0, 5, 3
 	uint8_t[4 iterate] autoscale gppwmOutput;GPPWM Output;"%", 0.5, 0, 0, 100, 2
+	int16_t[4 iterate] autoscale gppwmXAxis;;"", 1, 0, -30000, 30000, 0
+	int16_t[4 iterate] autoscale gppwmYAxis;;"", 0.1, 0, -1000, 1000, 1
 
 	int16_t autoscale rawBattery;;"V",{1/@@PACK_MULT_VOLTAGE@@}, 0, 0, 5, 3
 

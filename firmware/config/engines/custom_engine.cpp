@@ -18,6 +18,7 @@
 #include "proteus_meta.h"
 #include "hellen_meta.h"
 #include "odometer.h"
+#include "defaults.h"
 
 #if EFI_ELECTRONIC_THROTTLE_BODY
 #include "electronic_throttle.h"
@@ -61,7 +62,7 @@ void runSchedulingPrecisionTestIfNeeded(void) {
 }
 #endif /* EFI_PROD_CODE */
 
-void setFrankenso_01_LCD(engine_configuration_s *engineConfiguration) {
+void setFrankenso_01_LCD() {
 	engineConfiguration->HD44780_rs = Gpio::E7;
 	engineConfiguration->HD44780_e = Gpio::E9;
 	engineConfiguration->HD44780_db4 = Gpio::E11;
@@ -70,7 +71,7 @@ void setFrankenso_01_LCD(engine_configuration_s *engineConfiguration) {
 	engineConfiguration->HD44780_db7 = Gpio::B10;
 }
 
-void disableLCD(engine_configuration_s *engineConfiguration) {
+void disableLCD() {
 	engineConfiguration->HD44780_rs = Gpio::Unassigned;
 	engineConfiguration->HD44780_e = Gpio::Unassigned;
 	engineConfiguration->HD44780_db4 = Gpio::Unassigned;
@@ -79,14 +80,17 @@ void disableLCD(engine_configuration_s *engineConfiguration) {
 	engineConfiguration->HD44780_db7 = Gpio::Unassigned;
 }
 
+void setDiscoveryPdm() {
+}
+
 // todo: should this be part of more default configurations?
 void setFrankensoConfiguration() {
 	engineConfiguration->trigger.type = TT_ONE_PLUS_ONE;
 
-	setFrankenso_01_LCD(engineConfiguration);
+	setFrankenso_01_LCD();
 	engineConfiguration->displayMode = DM_HD44780;
-	commonFrankensoAnalogInputs(engineConfiguration);
-	setFrankenso0_1_joystick(engineConfiguration);
+	commonFrankensoAnalogInputs();
+	setFrankenso0_1_joystick();
 
 	/**
 	 * Frankenso analog #1 PC2 ADC12 CLT
@@ -264,7 +268,6 @@ void setEtbTestConfiguration() {
 
 #if EFI_ELECTRONIC_THROTTLE_BODY
 	setBoschVNH2SP30Curve();
-//	setDefaultEtbParameters();
 #endif /* EFI_ELECTRONIC_THROTTLE_BODY */
 
 	engineConfiguration->tps1_1AdcChannel = EFI_ADC_2; // PA2
@@ -569,6 +572,37 @@ static void mreBoardOldTest() {
 }
 
 #if HW_PROTEUS
+/*
+ * set engine_type 96
+ */
+
+void proteusDcWastegateTest() {
+	engineConfiguration->isBoostControlEnabled = true;
+	engineConfiguration->etbFunctions[0] = DC_Wastegate;
+	engineConfiguration->etbFunctions[1] = DC_None;
+	engineConfiguration->map.sensor.hwChannel = EFI_ADC_NONE;
+
+	engineConfiguration->tps1_1AdcChannel = EFI_ADC_10;
+	setTPS1Calibration(98, 926, 891, 69);
+
+	engineConfiguration->wastegatePositionSensor = EFI_ADC_6;
+	engineConfiguration->wastegatePositionMin = 700;
+	engineConfiguration->wastegatePositionMax = 4000;
+
+	strncpy(config->luaScript, R"(
+
+mapSensor = Sensor.new("map")
+mapSensor : setTimeout(3000)
+
+function onTick()
+	local tps = getSensor("TPS1")
+	tps = (tps == nil and 0 or tps)
+	mapSensor : set(tps)
+end
+
+    )", efi::size(config->luaScript));
+}
+
 /**
  * PROTEUS_QC_TEST_BOARD
  * set engine_type 42

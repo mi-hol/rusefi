@@ -48,12 +48,13 @@ class IEtbController : public ClosedLoopController<percent_t, percent_t>  {
 public:
 	// Initialize the throttle.
 	// returns true if the throttle was initialized, false otherwise.
-	virtual bool init(etb_function_e function, DcMotor *motor, pid_s *pidParameters, const ValueProvider3D* pedalMap, bool initializeThrottles = true) = 0;
+	virtual bool init(dc_function_e function, DcMotor *motor, pid_s *pidParameters, const ValueProvider3D* pedalMap, bool initializeThrottles = true) = 0;
 	virtual void reset() = 0;
 	virtual void setIdlePosition(percent_t pos) = 0;
 	virtual void setWastegatePosition(percent_t pos) = 0;
 	virtual void update() = 0;
 	virtual void autoCalibrateTps() = 0;
+	virtual bool isEtbMode() = 0;
 
 	virtual const pid_state_s& getPidState() const = 0;
 

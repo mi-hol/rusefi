@@ -194,11 +194,6 @@ enable2ndByteCanID = false
 	egoCorrectionForVeAnalyze = { 100 + fuelPidCorrection1 }
 
 	; These "synthetic" channels provide the Y-axis (load) value for gen purp PWM table's Y axes
-	gppwm1_load = {(gppwm1_loadAxis == 0) ? 0 : (gppwm1_loadAxis == 1) ? TPSValue : (gppwm1_loadAxis == 2) ? MAPValue : (gppwm1_loadAxis == 3) ? coolant : (gppwm1_loadAxis == 4) ? intake : (gppwm1_loadAxis == 5) ? fuelingLoad : (gppwm1_loadAxis == 6) ? ignitionLoad : (gppwm1_loadAxis == 7) ? auxTemp1 : (gppwm1_loadAxis == 8) ? auxTemp2 : (gppwm1_loadAxis == 9) ? throttlePedalPosition : (gppwm1_loadAxis == 10) ? VBatt : (gppwm1_loadAxis == 11) ? vvtPositionB1I : (gppwm1_loadAxis == 12) ? vvtPositionB1E : (gppwm1_loadAxis == 13) ? vvtPositionB2I : (gppwm1_loadAxis == 14) ? vvtPositionB2E : (gppwm1_loadAxis == 15) ? flexPercent : (gppwm1_loadAxis == 16) ? auxLinear1 : (gppwm1_loadAxis == 17) ? auxLinear2 : 0}
-	gppwm2_load = {(gppwm2_loadAxis == 0) ? 0 : (gppwm2_loadAxis == 1) ? TPSValue : (gppwm2_loadAxis == 2) ? MAPValue : (gppwm2_loadAxis == 3) ? coolant : (gppwm2_loadAxis == 4) ? intake : (gppwm2_loadAxis == 5) ? fuelingLoad : (gppwm2_loadAxis == 6) ? ignitionLoad : (gppwm2_loadAxis == 7) ? auxTemp1 : (gppwm2_loadAxis == 8) ? auxTemp2 : (gppwm2_loadAxis == 9) ? throttlePedalPosition : (gppwm2_loadAxis == 10) ? VBatt : (gppwm2_loadAxis == 11) ? vvtPositionB1I : (gppwm2_loadAxis == 12) ? vvtPositionB1E : (gppwm2_loadAxis == 13) ? vvtPositionB2I : (gppwm2_loadAxis == 14) ? vvtPositionB2E : (gppwm2_loadAxis == 15) ? flexPercent : (gppwm2_loadAxis == 16) ? auxLinear1 : (gppwm2_loadAxis == 17) ? auxLinear2 : 0}
-	gppwm3_load = {(gppwm3_loadAxis == 0) ? 0 : (gppwm3_loadAxis == 1) ? TPSValue : (gppwm3_loadAxis == 2) ? MAPValue : (gppwm3_loadAxis == 3) ? coolant : (gppwm3_loadAxis == 4) ? intake : (gppwm3_loadAxis == 5) ? fuelingLoad : (gppwm3_loadAxis == 6) ? ignitionLoad : (gppwm3_loadAxis == 7) ? auxTemp1 : (gppwm3_loadAxis == 8) ? auxTemp2 : (gppwm3_loadAxis == 9) ? throttlePedalPosition : (gppwm3_loadAxis == 10) ? VBatt : (gppwm3_loadAxis == 11) ? vvtPositionB1I : (gppwm3_loadAxis == 12) ? vvtPositionB1E : (gppwm3_loadAxis == 13) ? vvtPositionB2I : (gppwm3_loadAxis == 14) ? vvtPositionB2E : (gppwm3_loadAxis == 15) ? flexPercent : (gppwm3_loadAxis == 16) ? auxLinear1 : (gppwm3_loadAxis == 17) ? auxLinear2 : 0}
-	gppwm4_load = {(gppwm4_loadAxis == 0) ? 0 : (gppwm4_loadAxis == 1) ? TPSValue : (gppwm4_loadAxis == 2) ? MAPValue : (gppwm4_loadAxis == 3) ? coolant : (gppwm4_loadAxis == 4) ? intake : (gppwm4_loadAxis == 5) ? fuelingLoad : (gppwm4_loadAxis == 6) ? ignitionLoad : (gppwm4_loadAxis == 7) ? auxTemp1 : (gppwm4_loadAxis == 8) ? auxTemp2 : (gppwm4_loadAxis == 9) ? throttlePedalPosition : (gppwm4_loadAxis == 10) ? VBatt : (gppwm4_loadAxis == 11) ? vvtPositionB1I : (gppwm4_loadAxis == 12) ? vvtPositionB1E : (gppwm4_loadAxis == 13) ? vvtPositionB2I : (gppwm4_loadAxis == 14) ? vvtPositionB2E : (gppwm4_loadAxis == 15) ? flexPercent : (gppwm4_loadAxis == 16) ? auxLinear1 : (gppwm4_loadAxis == 17) ? auxLinear2 : 0}
-
 	ignBlends1_blendVal = {(ignBlends1_blendParameter == 0) ? 0 : (ignBlends1_blendParameter == 1) ? TPSValue : (ignBlends1_blendParameter == 2) ? MAPValue : (ignBlends1_blendParameter == 3) ? coolant : (ignBlends1_blendParameter == 4) ? intake : (ignBlends1_blendParameter == 5) ? fuelingLoad : (ignBlends1_blendParameter == 6) ? ignitionLoad : (ignBlends1_blendParameter == 7) ? auxTemp1 : (ignBlends1_blendParameter == 8) ? auxTemp2 : (ignBlends1_blendParameter == 9) ? throttlePedalPosition : (ignBlends1_blendParameter == 10) ? VBatt : (ignBlends1_blendParameter == 11) ? vvtPositionB1I : (ignBlends1_blendParameter == 12) ? vvtPositionB1E : (ignBlends1_blendParameter == 13) ? vvtPositionB2I : (ignBlends1_blendParameter == 14) ? vvtPositionB2E : (ignBlends1_blendParameter == 15) ? flexPercent : (ignBlends1_blendParameter == 16) ? auxLinear1 : (ignBlends1_blendParameter == 17) ? auxLinear2 : 0}
 	ignBlends2_blendVal = {(ignBlends2_blendParameter == 0) ? 0 : (ignBlends2_blendParameter == 1) ? TPSValue : (ignBlends2_blendParameter == 2) ? MAPValue : (ignBlends2_blendParameter == 3) ? coolant : (ignBlends2_blendParameter == 4) ? intake : (ignBlends2_blendParameter == 5) ? fuelingLoad : (ignBlends2_blendParameter == 6) ? ignitionLoad : (ignBlends2_blendParameter == 7) ? auxTemp1 : (ignBlends2_blendParameter == 8) ? auxTemp2 : (ignBlends2_blendParameter == 9) ? throttlePedalPosition : (ignBlends2_blendParameter == 10) ? VBatt : (ignBlends2_blendParameter == 11) ? vvtPositionB1I : (ignBlends2_blendParameter == 12) ? vvtPositionB1E : (ignBlends2_blendParameter == 13) ? vvtPositionB2I : (ignBlends2_blendParameter == 14) ? vvtPositionB2E : (ignBlends2_blendParameter == 15) ? flexPercent : (ignBlends2_blendParameter == 16) ? auxLinear1 : (ignBlends2_blendParameter == 17) ? auxLinear2 : 0}
 	ignBlends3_blendVal = {(ignBlends3_blendParameter == 0) ? 0 : (ignBlends3_blendParameter == 1) ? TPSValue : (ignBlends3_blendParameter == 2) ? MAPValue : (ignBlends3_blendParameter == 3) ? coolant : (ignBlends3_blendParameter == 4) ? intake : (ignBlends3_blendParameter == 5) ? fuelingLoad : (ignBlends3_blendParameter == 6) ? ignitionLoad : (ignBlends3_blendParameter == 7) ? auxTemp1 : (ignBlends3_blendParameter == 8) ? auxTemp2 : (ignBlends3_blendParameter == 9) ? throttlePedalPosition : (ignBlends3_blendParameter == 10) ? VBatt : (ignBlends3_blendParameter == 11) ? vvtPositionB1I : (ignBlends3_blendParameter == 12) ? vvtPositionB1E : (ignBlends3_blendParameter == 13) ? vvtPositionB2I : (ignBlends3_blendParameter == 14) ? vvtPositionB2E : (ignBlends3_blendParameter == 15) ? flexPercent : (ignBlends3_blendParameter == 16) ? auxLinear1 : (ignBlends3_blendParameter == 17) ? auxLinear2 : 0}
@@ -263,21 +258,21 @@ enable2ndByteCanID = false
 	maintainConstantValue = tpsMin, { (calibrationMode == @@TsCalMode_Tps1Min@@ ) ? calibrationValue : tpsMin }
 
 	; TPS 1 Secondary
-	maintainConstantValue = tps1SecondaryMax, { (calibrationMode == 6 ) ? calibrationValue : tps1SecondaryMax }
-	maintainConstantValue = tps1SecondaryMin, { (calibrationMode == 7 ) ? calibrationValue : tps1SecondaryMin }
+	maintainConstantValue = tps1SecondaryMax, { (calibrationMode == @@TsCalMode_Tps1SecondaryMax@@ ) ? calibrationValue : tps1SecondaryMax }
+	maintainConstantValue = tps1SecondaryMin, { (calibrationMode == @@TsCalMode_Tps1SecondaryMin@@ ) ? calibrationValue : tps1SecondaryMin }
 
 	; TPS 2 Primary
-	maintainConstantValue = tps2Max, { (calibrationMode == 8 ) ? calibrationValue : tps2Max }
-	maintainConstantValue = tps2Min, { (calibrationMode == 9 ) ? calibrationValue : tps2Min }
+	maintainConstantValue = tps2Max, { (calibrationMode == @@TsCalMode_Tps2Max@@ ) ? calibrationValue : tps2Max }
+	maintainConstantValue = tps2Min, { (calibrationMode == @@TsCalMode_Tps2Min@@ ) ? calibrationValue : tps2Min }
 
 	; TPS 2 Secondary
 	maintainConstantValue = tps2SecondaryMax, { (calibrationMode == @@TsCalMode_Tps2SecondaryMax@@ ) ? calibrationValue : tps2SecondaryMax }
 	maintainConstantValue = tps2SecondaryMin, { (calibrationMode == @@TsCalMode_Tps2SecondaryMin@@ ) ? calibrationValue : tps2SecondaryMin }
 
 	; ETB Auto Gain Calibration
-	maintainConstantValue = etb_pFactor, { (calibrationMode == 3 ) ? calibrationValue : etb_pFactor }
-	maintainConstantValue = etb_iFactor, { (calibrationMode == 4 ) ? calibrationValue : etb_iFactor }
-	maintainConstantValue = etb_dFactor, { (calibrationMode == 5 ) ? calibrationValue : etb_dFactor }
+	maintainConstantValue = etb_pFactor, { (calibrationMode == @@TsCalMode_EtbKp@@ ) ? calibrationValue : etb_pFactor }
+	maintainConstantValue = etb_iFactor, { (calibrationMode == @@TsCalMode_EtbKi@@ ) ? calibrationValue : etb_iFactor }
+	maintainConstantValue = etb_dFactor, { (calibrationMode == @@TsCalMode_EtbKd@@ ) ? calibrationValue : etb_dFactor }
 
 	maintainConstantValue = throttlePedalUpVoltage, { (calibrationMode == @@TsCalMode_PedalMin@@ ) ? calibrationValue  : throttlePedalUpVoltage }
 	maintainConstantValue = throttlePedalSecondaryUpVoltage, { (calibrationMode == @@TsCalMode_PedalMin@@ ) ? calibrationValue2 : throttlePedalSecondaryUpVoltage }
@@ -285,7 +280,6 @@ enable2ndByteCanID = false
 	maintainConstantValue = throttlePedalWOTVoltage, { (calibrationMode == @@TsCalMode_PedalMax@@ ) ? calibrationValue  : throttlePedalWOTVoltage }
 	maintainConstantValue = throttlePedalSecondaryWOTVoltage, { (calibrationMode == @@TsCalMode_PedalMax@@ ) ? calibrationValue2 : throttlePedalSecondaryWOTVoltage }
 
-	requiresPowerCycle = useETBforIdleControl
 	requiresPowerCycle = warningLedPin
 	requiresPowerCycle = runningLedPin
 	requiresPowerCycle = binarySerialTxPin
@@ -1144,26 +1138,26 @@ curve = 32Curve, "3-2 Shift Solenoid Percent by Speed"
 
 	table = gppwm1Tbl, gppwm1Map, "GP#1", 1
 		xyLabels = "RPM", ""
-		xBins = gppwm1_rpmBins, RPMValue
-		yBins = gppwm1_loadBins, gppwm1_load
+		xBins = gppwm1_rpmBins, gppwmXAxis1
+		yBins = gppwm1_loadBins, gppwmYAxis1
 		zBins = gppwm1_table
 
 	table = gppwm2Tbl, gppwm2Map, "GP#2", 1
 		xyLabels = "RPM", ""
-		xBins = gppwm2_rpmBins, RPMValue
-		yBins = gppwm2_loadBins, gppwm2_load
+		xBins = gppwm2_rpmBins, gppwmXAxis2
+		yBins = gppwm2_loadBins, gppwmYAxis2
 		zBins = gppwm2_table
 
 	table = gppwm3Tbl, gppwm3Map, "GP#3", 1
 		xyLabels = "RPM", ""
-		xBins = gppwm3_rpmBins, RPMValue
-		yBins = gppwm3_loadBins, gppwm3_load
+		xBins = gppwm3_rpmBins, gppwmXAxis3
+		yBins = gppwm3_loadBins, gppwmYAxis3
 		zBins = gppwm3_table
 
 	table = gppwm4Tbl, gppwm4Map, "GP#4", 1
 		xyLabels = "RPM", ""
-		xBins = gppwm4_rpmBins, RPMValue
-		yBins = gppwm4_loadBins, gppwm4_load
+		xBins = gppwm4_rpmBins, gppwmXAxis4
+		yBins = gppwm4_loadBins, gppwmYAxis4
 		zBins = gppwm4_table
 
 	table = tcuSolenoidTableTbl,  tcuSolenoidTableMap,  "Solenoids Active By Gear",	1
@@ -1215,6 +1209,13 @@ gaugeCategory = Alternator PID
 	alternatorStatus_errorGauge = alternatorStatus_error,"Alternator PID error", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
 	alternatorStatus_resetCounterGauge = alternatorStatus_resetCounter,"Alternator PID resetCounter", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 0,0
 
+gaugeCategory = Boost PID
+	boostStatus_iTermGauge = boostStatus_iTerm,"Boost PID iTerm", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
+	boostStatus_dTermGauge = boostStatus_dTerm,"Boost PID dTerm", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
+	boostStatus_outputGauge = boostStatus_output,"Boost PID output", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
+	boostStatus_errorGauge = boostStatus_error,"Boost PID error", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
+	boostStatus_resetCounterGauge = boostStatus_resetCounter,"Boost PID resetCounter", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 0,0
+
 gaugeCategory = Idle
 	idlePosSensGauge  = idlePositionSensor,		@@GAUGE_NAME_IDLE_POSITION@@,		"%",		0,	100,		0,		0,	100,	100,	1,	1
 	idleAirValvePositionGauge = idleAirValvePosition, "Idle position", "%",	0,	100,	0,	0,	100,  100,	1,	1
@@ -1225,22 +1226,22 @@ gaugeCategory = Idle
 	idleStatus_resetCounterGauge = idleStatus_resetCounter,"Idle PID resetCounter", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 0,0
 
 gaugeCategory = Etb PID
-	etbStatus_iTermGauge = etbStatus_iTerm,"ETB 1 PID iTerm", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	etbStatus_dTermGauge = etbStatus_dTerm,"ETB 1 PID dTerm", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	etbStatus_outputGauge = etbStatus_output,"ETB 1 PID output", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	etbStatus_errorGauge = etbStatus_error,"ETB 1 PID error", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	etbStatus_resetCounterGauge = etbStatus_resetCounter,"ETB 1 PID resetCounter", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 0,0
+	etbStatus_iTermGauge = etbStatus_iTerm,"ETB 1 PID iTerm", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	etbStatus_dTermGauge = etbStatus_dTerm,"ETB 1 PID dTerm", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	etbStatus_outputGauge = etbStatus_output,"ETB 1 PID output", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	etbStatus_errorGauge = etbStatus_error,"ETB 1 PID error", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	etbStatus_resetCounterGauge = etbStatus_resetCounter,"ETB 1 PID resetCounter", "", 0,100.0, 0,100.0, 0,100.0, 0,0
+
+	wgStatus_iTermGauge = wastegateDcStatus_iTerm,"WG PID iTerm", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	wgStatus_dTermGauge = wastegateDcStatus_dTerm,"WG PID dTerm", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	wgStatus_outputGauge = wastegateDcStatus_output,"WG PID output", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	wgStatus_errorGauge = wastegateDcStatus_error,"WG PID error", "", -100.0,100.0, -100.0,100.0, -100.0,100.0, 3,3
+	wgStatus_resetCounterGauge = wastegateDcStatus_resetCounter,"WG PID resetCounter", "", 0,100.0, 0,100.0, 0,100.0, 0,0
 
 gaugeCategory = CAN
 	canReadCounterGauge = canReadCounter,"canReadCounter", "", 0.0,0.0, 0.0,0.0, 0.0,0.0, 0,0
 	canWriteOkGauge = canWriteOk,"canWriteOk", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
 	canWriteNotOkGauge = canWriteNotOk,"canWriteNotOk", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-
-;gaugeCategory = MAP Cam
-	;TEMPLOG_map_peakGauge = TEMPLOG_map_peak,"TEMPLOG_map_peak", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	;TEMPLOG_MAP_AT_SPECIAL_POINTGauge = TEMPLOG_MAP_AT_SPECIAL_POINT,"TEMPLOG_MAP_AT_SPECIAL_POINT", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	;TEMPLOG_MAP_AT_DIFFGauge = TEMPLOG_MAP_AT_DIFF,"TEMPLOG_MAP_AT_DIFF", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
-	;TEMPLOG_MAP_AT_CYCLE_COUNTGauge = TEMPLOG_MAP_AT_CYCLE_COUNT,"TEMPLOG_MAP_AT_CYCLE_COUNT", "", -10000.0,10000.0, -10000.0,10000.0, -10000.0,10000.0, 3,3
 
 gaugeCategory = GDI
 	systemEventReuseGauge = systemEventReuse,"systemEventReuse", "counter", 0.0,0.0, 0.0,0.0, 0.0,0.0, 0,0
@@ -1381,10 +1382,6 @@ gaugeCategory = Throttle Body (incl. ETB)
 	etbTargetGauge	= etbTarget,	@@GAUGE_NAME_ETB_TARGET@@, "%",	0,	100,	0,	0,	100,	100,	1,	1
 	etbErrorGauge		= etbStatus_error,	@@GAUGE_NAME_ETB_ERROR@@,  "%",	-20,  20,	-10,	-5,	5,	10,  2, 0
 	etbDutyCycleGauge  = etb1DutyCycle, @@GAUGE_NAME_ETB_DUTY@@,					"%",	-100, 100,	-75,	-50,	50,	75,  0, 0
-	etbDutyRateOfChangeGauge  = etbDutyRateOfChange, "ETB duty rate of change",					"",	-100, 100,	-75,	-50,	50,	75,  0, 3
-	etbDutyAverageGauge  = etbDutyAverage, "ETB average duty",					"",	-100, 100,	-75,	-50,	50,	75,  0, 3
-	etbTpsErrorCounterGauge = etbTpsErrorCounter, "TPS sensor error counter",					"",	-100, 100,	-75,	-50,	50,	75,  0, 0
-	etbPpsErrorCounterGauge = etbPpsErrorCounter, "PPS sensor error counter",					"",	-100, 100,	-75,	-50,	50,	75,  0, 0
 
 gaugeCategory = Sensors - Raw
 	rawTps1PrimaryGauge  = rawTps1Primary, "Raw TPS 1 Primary", "V", 0, 5, 0, 0, 5, 5, 3, 0
@@ -1581,8 +1578,7 @@ menuDialog = main
 		subMenu = engineChars,				"Base engine"
 		subMenu = limitsAndFallback,		"Limits and fallbacks"
 		subMenu = triggerConfiguration,		"Trigger"
-		subMenu = triggerConfiguration_IO, "Advanced Trigger"
-		subMenu = triggerConfiguration_gap, "Trigger Gap Override"
+		subMenu = trigger_advanced, "Advanced Trigger"
 		subMenu = std_separator
 		subMenu = energySystems,			"Battery and alternator"
 		subMenu = std_separator
@@ -1734,7 +1730,7 @@ menuDialog = main
 		subMenu = boostOpenLoopDialog,	"Boost control open loop", { isBoostControlEnabled }
 		subMenu = boostPidDialog,		"Boost control PID", { isBoostControlEnabled && boostType == 1 }
 		subMenu = boostTargetDialog,	"Boost control target", { isBoostControlEnabled && boostType == 1 }
-		subMenu = boostEtbPid,			"ETB-style Wastegate Actuator", { etbFunctions1 == @@etb_function_e_ETB_Wastegate@@ || etbFunctions2 == @@etb_function_e_ETB_Wastegate@@ }
+		subMenu = boostEtbPid,			"ETB-style Wastegate Actuator", { etbFunctions1 == @@dc_function_e_DC_Wastegate@@ || etbFunctions2 == @@dc_function_e_DC_Wastegate@@ }
 
 		subMenu = std_separator
 		subMenu = gppwm1, "General Purpose PWM 1"
@@ -1964,10 +1960,10 @@ cmd_tle8888_init			= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\
 cmd_write_config			= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0A"
 cmd_etb_autotune				= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0C"
 cmd_enable_self_stim			= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0D"
-cmb_etb_auto_calibrate		= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0E"
+cmd_etb_auto_calibrate		= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0E"
 cmd_disable_self_stim		= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x0F"
 cmd_etb_autotune_stop		= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x10"
-cmb_etb_auto_calibrate_2	= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x11"
+cmd_etb_auto_calibrate_2	= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x11"
 cmd_wideband_firmare_update  = "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x12"
 cmd_enable_ext_stim			= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x13"
 cmd_nDBANK						= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_X14_16_hex@@\x00\x14"@@if_ts_show_f7_presets
@@ -2172,86 +2168,92 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 		field = "Compression Ratio",					compressionRatio
 		field = "Forced Induction?",					isForcedInduction
 
-;			Engine->Trigger configuration
-	dialog = triggerConfiguration_settings,	"Trigger Pattern"
+	dialog = trigger_primary, "Primary Trigger"
 		topicHelp = "triggerHelp"
+		; see also in firmware '[doesTriggerImplyOperationMode]' tag
+		field = "Engine type",	twoStroke
+		field = ""
 		field = "Trigger type",							trigger_type
 		field = "Total tooth count",					trigger_customTotalToothCount, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@}, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@}
 		field = "Missing/skipped tooth count",					trigger_customSkippedToothCount, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@}, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@}
-
-		; see also in firmware '[doesTriggerImplyOperationMode]' tag
-		field = "What kind of engine",						twoStroke
-		field = "Skipped wheel location",					skippedWheelOnCam, 1, { twoStroke == 0 && (trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@ || @@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@) }
+		field = "Primary trigger location",					skippedWheelOnCam, 1, { twoStroke == 0 && (trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL@@ || @@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@) }
+		field = ""
 		field = "!Reminder that 4-stroke cycle is 720 degrees"
 		field = "!For well-known trigger types use '0' trigger angle offset"
 		field = "Trigger Angle Advance",					globalTriggerAngleOffset
 
-	dialog = triggerConfiguration_gap, "Trigger Gap Override"
-		field = "!This is a pretty advanced feature for when you are debugging trigger synchronization"
-		field = "Override well known trigger gaps",	overrideTriggerGaps
-		field = gapTrackingLengthOverride,				gapTrackingLengthOverride, { overrideTriggerGaps == 1 }
-		field = "First gap from",						triggerGapOverrideFrom1, { overrideTriggerGaps == 1 }
-		field = "First gap to",							triggerGapOverrideTo1  , { overrideTriggerGaps == 1 }
+		field = ""
+		field = ""
 
-		field = "Second gap from",						triggerGapOverrideFrom2, { overrideTriggerGaps == 1 }
-		field = "Second gap to",						triggerGapOverrideTo2, { overrideTriggerGaps == 1 }
-
-		field = "Third gap from",						triggerGapOverrideFrom3, { overrideTriggerGaps == 1 }
-		field = "Third gap to",							triggerGapOverrideTo3, { overrideTriggerGaps == 1 }
-
-		field = "Gap #4 from",								triggerGapOverrideFrom4, { overrideTriggerGaps == 1 }
-		field = "Gap #4 to",								triggerGapOverrideTo4, { overrideTriggerGaps == 1 }
-		field = "Gap #5 from",								triggerGapOverrideFrom5, { overrideTriggerGaps == 1 }
-		field = "Gap #5 to",								triggerGapOverrideTo5, { overrideTriggerGaps == 1 }
-
-	dialog = triggerConfiguration_IO,	"Advanced Trigger"
-		field = "!https://rusefi.com/s/vvt"
-; todo: code generator to hard-code all triggers not requiring VVT?
-; todo: https://github.com/rusefi/rusefi/issues/2077
-
-		field = "Cam mode (intake cams)",				vvtMode1, {trigger_type != @@trigger_type_e_TT_MAZDA_MIATA_NA@@}
-		field = "MAP readout angle",					mapCamDetectionAnglePosition, 1, { vvtMode1 == @@vvt_mode_e_VVT_MAP_V_TWIN@@ }
-		field = "Cam mode (exhaust cams)",				vvtMode2, {trigger_type != @@trigger_type_e_TT_MAZDA_MIATA_NA@@}
-		field = "Cam for engine sync resolution",		engineSyncCam, { vvtMode1 != @@vvt_mode_e_VVT_INACTIVE@@ || vvtMode2 != @@vvt_mode_e_VVT_INACTIVE@@ }
-		field = "#Set offset so VVT indicates 0 degrees in default position"
-		field = "VVT offset bank 1 intake",				vvtOffsets1, { camInputs1 != 0 }
-		field = "VVT offset bank 1 exhaust",			vvtOffsets2, { camInputs2 != 0 }
-		field = "VVT offset bank 2 intake",				vvtOffsets3, { camInputs3 != 0 }
-		field = "VVT offset bank 2 exhaust",			vvtOffsets4, { camInputs4 != 0 }
-		field = "Require cam/VVT sync for ignition",	isPhaseSyncRequiredForIgnition
-		field = "Maximum cam/VVT sync RPM",				maxCamPhaseResolveRpm
-		field = "Print verbose VVT sync details to console",verboseVVTDecoding
-		field = "Print verbose trigger sync to console",	verboseTriggerSynchDetails
-		field = "Display logic signals",				displayLogicLevelsInEngineSniffer
-		field = "Do not print messages in case of sync error",  silentTriggerError
-		field = "Focus on inputs in engine sniffer",	engineSnifferFocusOnInputs
-		field = "Enable noise filtering",				useNoiselessTriggerDecoder, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL_60_2@@ || trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL_36_1@@}
-		field = "Trigger Edge Filter",                  doNotFilterTriggerEdgeNoise
-
-	dialog = triggerInputs,					"Trigger Inputs"
 		field = "#Cam is primary if you have cam sensor as part of trigger shape"
 		; cam if
 		; two-stroke, or
 		; not crank trigger and ((vague trigger and cam choice) or not vague trigger)
 		field = "Cam Sensor (Primary channel)",		triggerInputPins1, 1, {twoStroke == 1 || ( !(@@TRIGGER_CRANK_BASED@@) && ( ( (@@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@) && skippedWheelOnCam) || !(@@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@)  ) )  }
 		field = "Crank Sensor (Primary channel)",		triggerInputPins1, 1, { !(twoStroke == 1 || ( !(@@TRIGGER_CRANK_BASED@@) && ( ( (@@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@) && skippedWheelOnCam) || !(@@TRIGGER_TYPE_WITHOUT_KNOWN_LOCATION@@)  ) )) }
-
 		field = "Invert Primary",						invertPrimaryTriggerSignal
 		field = "Secondary channel",					triggerInputPins2, { triggerInputPins2 != 0 || (triggerInputPins1 != 0 && (@@TRIGGER_TYPE_WITH_SECOND_WHEEL@@) ) }
 		field = "Invert Secondary",						invertSecondaryTriggerSignal, {triggerInputPins2 != 0 && (@@TRIGGER_TYPE_WITH_SECOND_WHEEL@@) }
-		field = "#VVT or Cam for 60/2 goes below"
-		field = "#If your engine has no exhaust cam sensor, use intake cam inputs"
+
+	dialog = trigger_cams, "Cam Inputs"
+		field = "!https://rusefi.com/s/vvt"
+		; todo: code generator to hard-code all triggers not requiring VVT?
+		; todo: https://github.com/rusefi/rusefi/issues/2077
+
+		field = "Cam mode (intake)",				vvtMode1, {trigger_type != @@trigger_type_e_TT_MAZDA_MIATA_NA@@}
+		field = "Cam mode (exhaust)",				vvtMode2, {trigger_type != @@trigger_type_e_TT_MAZDA_MIATA_NA@@}
+		field = ""
 		field = "Cam sensor bank 1 intake",			camInputs1, { camInputs1 != 0 || (vvtMode1 != @@vvt_mode_e_VVT_INACTIVE@@ ) }
 		field = "Cam sensor bank 1 exhaust",		camInputs2, { camInputs2 != 0 || (vvtMode2 != @@vvt_mode_e_VVT_INACTIVE@@ && camInputs1 != 0 ) }
 		field = "Cam sensor bank 2 intake",			camInputs3, { camInputs3 != 0 || (vvtMode1 != @@vvt_mode_e_VVT_INACTIVE@@ && camInputs1 != 0 ) }
 		field = "Cam sensor bank 2 exhaust",		camInputs4, { camInputs4 != 0 || (vvtMode2 != @@vvt_mode_e_VVT_INACTIVE@@ && camInputs2 != 0 ) }
 		field = "Invert cam inputs",					invertCamVVTSignal, { camInputs1 != 0 }
+		field = ""
+		field = "#Set offset so VVT indicates 0 degrees in default position"
+		field = "VVT offset bank 1 intake",				vvtOffsets1, { camInputs1 != 0 }
+		field = "VVT offset bank 1 exhaust",			vvtOffsets2, { camInputs2 != 0 }
+		field = "VVT offset bank 2 intake",				vvtOffsets3, { camInputs3 != 0 }
+		field = "VVT offset bank 2 exhaust",			vvtOffsets4, { camInputs4 != 0 }
+		field = ""
+		field = "Cam for engine sync resolution",		engineSyncCam, { vvtMode1 != @@vvt_mode_e_VVT_INACTIVE@@ || vvtMode2 != @@vvt_mode_e_VVT_INACTIVE@@ }
+
+	dialog = triggerConfiguration_gap, "Trigger Gap Override"
+		field = "!This is an advanced feature for debugging trigger synchronization"
+		field = "Override trigger gaps",	overrideTriggerGaps
+		field = "Count",	gapTrackingLengthOverride, { overrideTriggerGaps == 1 }
+		field = "Gap #1 from",		triggerGapOverrideFrom1,	{ overrideTriggerGaps == 1 }
+		field = "Gap #1 to",		triggerGapOverrideTo1,		{ overrideTriggerGaps == 1 }
+		field = "Gap #2 from",		triggerGapOverrideFrom2,	{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 2 }
+		field = "Gap #2 to",		triggerGapOverrideTo2,		{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 2 }
+		field = "Gap #3 from",		triggerGapOverrideFrom3,	{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 3 }
+		field = "Gap #3 to",		triggerGapOverrideTo3,		{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 3 }
+		field = "Gap #4 from",		triggerGapOverrideFrom4,	{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 4 }
+		field = "Gap #4 to",		triggerGapOverrideTo4,		{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 4 }
+		field = "Gap #5 from",		triggerGapOverrideFrom5,	{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 5 }
+		field = "Gap #5 to",		triggerGapOverrideTo5,		{ overrideTriggerGaps == 1 && gapTrackingLengthOverride >= 5 }
+
+	dialog = triggerInputComparator, "Built-in Comparator Settings (Kinetis-only)"
+		field = "Comparator Center Point Voltage", triggerCompCenterVolt
+		field = "Comparator hysteresis voltage (Min)", triggerCompHystMin
+		field = "Comparator hysteresis voltage (Max)", triggerCompHystMax
+		field = "VR-sensor saturation RPM", triggerCompSensorSatRpm
+
+	dialog = trigger_advanced,	"Advanced Trigger"
+		field = "Require cam/VVT sync for ignition",	isPhaseSyncRequiredForIgnition
+		field = "Maximum cam/VVT sync RPM",				maxCamPhaseResolveRpm
+		field = "MAP readout angle",					mapCamDetectionAnglePosition, 1, { vvtMode1 == @@vvt_mode_e_VVT_MAP_V_TWIN@@ }
+		field = "Print verbose VVT sync details to console",verboseVVTDecoding
+		field = "Print verbose trigger sync to console",	verboseTriggerSynchDetails
+		field = "Display logic signals",				displayLogicLevelsInEngineSniffer
+		field = "Do not print messages in case of sync error",  silentTriggerError
+		field = "Focus on inputs in engine sniffer",	engineSnifferFocusOnInputs
+		field = "Enable noise filtering",				useNoiselessTriggerDecoder, {trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL_60_2@@ || trigger_type == @@trigger_type_e_TT_TOOTHED_WHEEL_36_1@@}
 		panel = triggerInputComparator @@if_ts_show_trigger_comparator
+		panel = triggerConfiguration_gap
 
-
-	dialog = triggerConfiguration
-		panel = triggerConfiguration_settings, {1}, { consumeObdSensors == 0 }
-		panel = triggerInputs, {1}, { consumeObdSensors == 0 }
+	dialog = triggerConfiguration, "", xAxis
+		panel = trigger_primary, {1}, { consumeObdSensors == 0 }
+		panel = trigger_cams, {1}, { consumeObdSensors == 0 }
 
 ;			Engine->Injection Settings
 	dialog = injChars, "Injector Settings",	yAxis
@@ -2534,7 +2536,7 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 		field = "Secondary sensor",				tps1_2AdcChannel, {tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
 		field = "Secondary min",				tps1SecondaryMin, {tps1_2AdcChannel != @@ADC_CHANNEL_NONE@@ && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
 		field = "Secondary max",				tps1SecondaryMax, {tps1_2AdcChannel != @@ADC_CHANNEL_NONE@@ && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
-		commandButton = "Auto Calibrate ETB 1", cmb_etb_auto_calibrate, {etb1configured == 1 && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
+		commandButton = "Auto Calibrate ETB 1", cmd_etb_auto_calibrate, {etb1configured == 1 && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@ && calibrationMode == @@TsCalMode_None@@}
 
 	dialog = tpsNum2, "Throttle Body #2"
 		field = "Primary sensor",				tps2_1AdcChannel
@@ -2543,7 +2545,7 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 		field = "Secondary sensor",				tps2_2AdcChannel, {tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@}
 		field = "Secondary min",				tps2SecondaryMin, {tps2_2AdcChannel != @@ADC_CHANNEL_NONE@@ && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@}
 		field = "Secondary max",				tps2SecondaryMax, {tps2_2AdcChannel != @@ADC_CHANNEL_NONE@@ && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@}
-		commandButton = "Auto Calibrate ETB 2", cmb_etb_auto_calibrate_2, {etb2configured == 1 && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@}
+		commandButton = "Auto Calibrate ETB 2", cmd_etb_auto_calibrate_2, {etb2configured == 1 && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@ && calibrationMode == @@TsCalMode_None@@}
 
 	dialog = tpsLimits, "TPS Limits"
 		field = "TPS minimum valid value",	tpsErrorDetectionTooLow, {tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
@@ -2647,12 +2649,6 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 	dialog = fuelLevelDialog,				"Fuel Level Sensor"
 		field = "Input channel",						fuelLevelSensor
 		panel = fuelLevelCurve
-
-	dialog = triggerInputComparator, "Built-in Comparator Settings (Kinetis-only)"
-		field = "Comparator Center Point Voltage", triggerCompCenterVolt
-		field = "Comparator hysteresis voltage (Min)", triggerCompHystMin
-		field = "Comparator hysteresis voltage (Max)", triggerCompHystMax
-		field = "VR-sensor saturation RPM", triggerCompSensorSatRpm
 
 	dialog = joystickPanel, "Joystick"
 		field = "joustick center button",				joystickCenterPin
@@ -3074,8 +3070,8 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 
 	dialog = etbHbridgeHardware, "ETB H-Bridge Hardware"
 		field = "Two-wire mode",						etb_use_two_wires
-		panel = etbHbridgeHardwareNo1, { etbFunctions1 != @@etb_function_e_ETB_None@@ }
-		panel = etbHbridgeHardwareNo2, { etbFunctions2 != @@etb_function_e_ETB_None@@ }
+		panel = etbHbridgeHardwareNo1, { etbFunctions1 != @@dc_function_e_DC_None@@ }
+		panel = etbHbridgeHardwareNo2, { etbFunctions2 != @@dc_function_e_DC_None@@ }
 
 	dialog = stepperHbridgeHardwareNo1, "H-Bridge Hardware No1"
 		field = "No1 Direction #1",						stepperDcIo1_directionPin1
@@ -3090,8 +3086,8 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 	dialog = stepperHbridgeHardware, "Stepper H-Bridge Hardware"
 		topicHelp = "stepperHbridgeHardwareHelp"
 		field = "Inverted driver pins",					stepperDcInvertedPins
-		panel = stepperHbridgeHardwareNo1, { etbFunctions1 != @@etb_function_e_ETB_None@@ }
-		panel = stepperHbridgeHardwareNo2, { etbFunctions2 != @@etb_function_e_ETB_None@@ }
+		panel = stepperHbridgeHardwareNo1, { etbFunctions1 != @@dc_function_e_DC_None@@ }
+		panel = stepperHbridgeHardwareNo2, { etbFunctions2 != @@dc_function_e_DC_None@@ }
 
 	dialog = idleStepperHw, "Stepper Controller Hardware"
 		topicHelp = "idleStepperHwHelp"
@@ -3139,8 +3135,7 @@ cmd_set_engine_type_default					= "@@TS_IO_TEST_COMMAND_char@@@@ts_command_e_TS_
 		field = "!ECU reboot needed to apply these settings"
 		field = "Use Stepper",				useStepperIdle
 		field = "Double Solenoid Mode",		isDoubleSolenoidIdle
-		field = "Use electronic throttle for idle",			useETBforIdleControl, { useETBforIdleControl == 1 || throttlePedalPositionAdcChannel != @@ADC_CHANNEL_NONE@@ }
-		field = "Electronic throttle idle range",			etbIdleThrottleRange, { useETBforIdleControl == 1 }
+		field = "Electronic throttle idle range",			etbIdleThrottleRange
 		panel = idleHwType
 
 	dialog = idlePidSettings, "Closed Loop Idle"
@@ -4009,7 +4004,6 @@ dialog = tcuControls, "Transmission Settings"
 		field = "iTermMax",								etb_iTermMax
 
 	dialog = etbIdleDialog, "ETB Idle"
-		field = "use ETB for idle",						useETBforIdleControl
 		field = "ETB idle maximum angle",				etbIdleThrottleRange
 
 	dialog = etbDialogLeft
@@ -4029,32 +4023,28 @@ dialog = tcuControls, "Transmission Settings"
 		; criteria for the same panel when used in multiple places
 		; todo: report bug to TS?
 		; another todo: split panel into two panels so that we can enable/disable h-bridge #1 separately from h-bridge #2
-		panel = etbHbridgeHardware, { etbFunctions1 != @@etb_function_e_ETB_None@@ || etbFunctions2 != @@etb_function_e_ETB_None@@ || (useStepperIdle && useHbridgesToDriveIdleStepper) } @@if_ts_show_etb_pins
+		panel = etbHbridgeHardware, { etbFunctions1 != @@dc_function_e_DC_None@@ || etbFunctions2 != @@dc_function_e_DC_None@@ || (useStepperIdle && useHbridgesToDriveIdleStepper) } @@if_ts_show_etb_pins
 
 	dialog = etbAutotune, "PID Autotune"
 		field = "First step: calibrate TPS and hit 'Burn'"
-		commandButton = "Auto Calibrate ETB 1", cmb_etb_auto_calibrate, {etb1configured == 1 && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@}
-		commandButton = "Auto Calibrate ETB 2", cmb_etb_auto_calibrate_2, {etb2configured == 1 && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@}
+		commandButton = "Auto Calibrate ETB 1", cmd_etb_auto_calibrate, {etb1configured == 1 && tps1_1AdcChannel != @@ADC_CHANNEL_NONE@@ && calibrationMode == @@TsCalMode_None@@}
+		commandButton = "Auto Calibrate ETB 2", cmd_etb_auto_calibrate_2, {etb2configured == 1 && tps2_1AdcChannel != @@ADC_CHANNEL_NONE@@ && calibrationMode == @@TsCalMode_None@@}
 		field = "Second step"
-		commandButton = "Start ETB PID Autotune", cmd_etb_autotune,       { etb1configured == 1 || etb2configured == 1 }
-		commandButton = "Stop ETB PID Autotune",  cmd_etb_autotune_stop,  { etb1configured == 1 || etb2configured == 1 }
+		commandButton = "Start ETB PID Autotune", cmd_etb_autotune,       {(etb1configured == 1 || etb2configured == 1) && calibrationMode = @@TsCalMode_None@@}
+		commandButton = "Stop ETB PID Autotune",  cmd_etb_autotune_stop,  {(etb1configured == 1 || etb2configured == 1) && calibrationMode >= @@TsCalMode_EtbKp@@ && calibrationMode <= @@TsCalMode_EtbKd@@}
 
 		field = "!Set debug mode below to 'ETB Autotune' to show more detail"
 		field = "Debug mode",							debugMode
 
 	dialog = etbDialogRight
-		panel = etbIdleDialog
-		panel = etbPidDialog
-		panel = etbAutotune
-
-		; Neutral position handling not yet implemented!
-		;field = "Neutral Position",						etbNeutralPosition
+		panel = etbIdleDialog,{ etbFunctions1 == @@dc_function_e_DC_Throttle1@@ || etbFunctions1 == @@dc_function_e_DC_Throttle2@@ || etbFunctions2 == @@dc_function_e_DC_Throttle1@@ || etbFunctions2 == @@dc_function_e_DC_Throttle2@@ }
+		panel = etbPidDialog, { etbFunctions1 == @@dc_function_e_DC_Throttle1@@ || etbFunctions1 == @@dc_function_e_DC_Throttle2@@ || etbFunctions2 == @@dc_function_e_DC_Throttle1@@ || etbFunctions2 == @@dc_function_e_DC_Throttle2@@ }
+		panel = etbAutotune,  { etbFunctions1 == @@dc_function_e_DC_Throttle1@@ || etbFunctions1 == @@dc_function_e_DC_Throttle2@@ || etbFunctions2 == @@dc_function_e_DC_Throttle1@@ || etbFunctions2 == @@dc_function_e_DC_Throttle2@@ }
 
 	dialog = etbDialog, "Electronic Throttle Body", border
 		topicHelp = "etbHelp"
 		panel = etbDialogLeft, West
 		panel = etbDialogRight, East
-
 
 	dialog = testSpark, "Spark"
 		commandButton = "Spark #1",  cmd_test_spk1
@@ -4244,16 +4234,17 @@ dialog = tcuControls, "Transmission Settings"
 	dialog = antiLagDialog, "AntiLag Settings"
 	    field = "Enable AntiLag",                   antiLagEnabled
 		field = "Activation Mode",          	    antiLagActivationMode
-		field = "Switch Input",                     ALSActivatePin,  {antiLagActivationMode != @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
-		field = "ALS Button inverted",				ALSActivateInverted,  {antiLagActivationMode != @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
-		field = "ALS Button mode",                  ALSActivatePinMode,  {antiLagActivationMode != @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
+		field = "Switch Input",                     ALSActivatePin,  {antiLagActivationMode == @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
+		field = "ALS Button inverted",				ALSActivateInverted,  {antiLagActivationMode == @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
+		field = "ALS Button mode",                  ALSActivatePinMode,  {antiLagActivationMode == @@antiLagActivationMode_e_SWITCH_INPUT_ANTILAG@@ && antiLagEnabled == 1}
+		field = "ALS timeout",                      ALSMaxDuration,  {antiLagEnabled == 1}
 		field = "Max TPS",                          ALSMaxTPS,  {antiLagEnabled == 1}
 		field = "Min RPM",            	    		ALSMinRPM,  {antiLagEnabled == 1}
 		field = "Max RPM",                          ALSMaxRPM,  {antiLagEnabled == 1}
 		field = "Min CLT",                          ALSMinCLT,  {antiLagEnabled == 1}
-		field = "Max CLT",          	    		ALSMaxCLT,  {antiLagEnabled == 1}                 
-		field = "Idle Air Add",                     ALSIdleAdd, {useETBforIdleControl != 1 && antiLagEnabled == 1}
-		field = "ETB Air Add",                      ALSEtbAdd,  {useETBforIdleControl == 1 && antiLagEnabled == 1}
+		field = "Max CLT",          	    		ALSMaxCLT,  {antiLagEnabled == 1}
+		field = "Idle Air Add",                     ALSIdleAdd, {antiLagEnabled == 1}
+		field = "ETB Air Add",                      ALSEtbAdd,  {antiLagEnabled == 1}
 		field = "Spark Skip Ratio",                 ALSSkipRatio,  {antiLagEnabled == 1}
 		panel = FuelAdderTableALS
 		panel = IgnRetardTableALS
@@ -4291,6 +4282,7 @@ dialog = tcuControls, "Transmission Settings"
 		field = "boardUseD4PullDown",						boardUseD4PullDown
 		field = "boardUseD5PullDown",						boardUseD5PullDown
 		field = "SENT input 1",								sentInputPins1
+		field = "SENT sentEtbType",							sentEtbType
 		field = "etbDutyThreshold",                         etbDutyThreshold
 		field = "etbDutyShutdownThreshold",                 etbDutyShutdownThreshold
 
@@ -4349,7 +4341,8 @@ dialog = tcuControls, "Transmission Settings"
 		field = "Off below duty", gppwm1_offBelowDuty, {gppwm1_pin != 0 && gppwm1_pwmFrequency == 0}
 		field = "Duty if error", gppwm1_dutyIfError, {gppwm1_pin != 0}
 		field = ""
-		field = "Load Axis", gppwm1_loadAxis, {gppwm1_pin != 0}
+		field = "X Axis", gppwm1_rpmAxis, {gppwm1_pin != 0}
+		field = "Y Axis", gppwm1_loadAxis, {gppwm1_pin != 0}
 		field = "Note", gpPwmNote1
 		field = ""
 		field = ""
@@ -4371,7 +4364,8 @@ dialog = tcuControls, "Transmission Settings"
 		field = "Off below duty", gppwm2_offBelowDuty, {gppwm2_pin != 0 && gppwm2_pwmFrequency == 0}
 		field = "Duty if error", gppwm2_dutyIfError, {gppwm2_pin != 0}
 		field = ""
-		field = "Load Axis", gppwm2_loadAxis, {gppwm2_pin != 0}
+		field = "X Axis", gppwm2_rpmAxis, {gppwm2_pin != 0}
+		field = "Y Axis", gppwm2_loadAxis, {gppwm2_pin != 0}
 		field = "Note", gpPwmNote2
 		field = ""
 		field = ""
@@ -4393,7 +4387,8 @@ dialog = tcuControls, "Transmission Settings"
 		field = "Off below duty", gppwm3_offBelowDuty, {gppwm3_pin != 0 && gppwm3_pwmFrequency == 0}
 		field = "Duty if error", gppwm3_dutyIfError, {gppwm3_pin != 0}
 		field = ""
-		field = "Load Axis", gppwm3_loadAxis, {gppwm3_pin != 0}
+		field = "X Axis", gppwm3_rpmAxis, {gppwm3_pin != 0}
+		field = "Y Axis", gppwm3_loadAxis, {gppwm3_pin != 0}
 		field = "Note", gpPwmNote3
 		field = ""
 		field = ""
@@ -4415,7 +4410,8 @@ dialog = tcuControls, "Transmission Settings"
 		field = "Off below duty", gppwm4_offBelowDuty, {gppwm4_pin != 0 && gppwm4_pwmFrequency == 0}
 		field = "Duty if error", gppwm4_dutyIfError, {gppwm4_pin != 0}
 		field = ""
-		field = "Load Axis", gppwm4_loadAxis, {gppwm4_pin != 0}
+		field = "X Axis", gppwm4_rpmAxis, {gppwm4_pin != 0}
+		field = "Y Axis", gppwm4_loadAxis, {gppwm4_pin != 0}
 		field = "Note", gpPwmNote4
 		field = ""
 		field = ""

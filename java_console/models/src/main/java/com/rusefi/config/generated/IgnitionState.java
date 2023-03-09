@@ -1,6 +1,6 @@
 package com.rusefi.config.generated;
 
-// this file was generated automatically by rusEFI tool ConfigDefinition.jar based on (unknown script) controllers/algo/ignition_state.txt Sat Jan 21 02:47:02 UTC 2023
+// this file was generated automatically by rusEFI tool ConfigDefinition.jar based on (unknown script) controllers/algo/ignition_state.txt Sun Feb 19 03:53:01 UTC 2023
 
 // by class com.rusefi.output.FileJavaFieldsConsumer
 import com.rusefi.config.*;
@@ -98,12 +98,13 @@ public class IgnitionState {
 	public static final int ETB_BIAS_CURVE_LENGTH = 8;
 	public static final int ETB_COUNT = 2;
 	public static final int ETB_HW_MAX_FREQUENCY = 3000;
-	public static final int FLASH_DATA_VERSION = 10018;
+	public static final int FLASH_DATA_VERSION = 10020;
 	public static final int FUEL_LEVEL_TABLE_COUNT = 8;
 	public static final int FUEL_LOAD_COUNT = 16;
 	public static final int FUEL_RPM_COUNT = 16;
 	public static final int GAP_TRACKING_LENGTH = 18;
 	public static final String GAUGE_CATEGORY_BOOST_CONTROL = "Boost Control";
+	public static final String GAUGE_CATEGORY_ETB = "ETB more";
 	public static final String GAUGE_CATEGORY_FUEL_MATH = "Fuel: math";
 	public static final String GAUGE_CATEGORY_TIMING = "Timing";
 	public static final String GAUGE_COIL_DWELL_TIME = "dwell: coil charge time";
@@ -403,16 +404,16 @@ public class IgnitionState {
 	public static final int VM_VVT_INACTIVE = 0;
 	public static final int VR_THRESHOLD_COUNT = 2;
 	public static final int WWAE_TABLE_SIZE = 8;
-	public static final Field BASEDWELL = Field.create("BASEDWELL", 0, FieldType.FLOAT).setBaseOffset(796);
-	public static final Field SPARKDWELL = Field.create("SPARKDWELL", 4, FieldType.FLOAT).setBaseOffset(796);
-	public static final Field DWELLANGLE = Field.create("DWELLANGLE", 8, FieldType.FLOAT).setBaseOffset(796);
-	public static final Field CLTTIMINGCORRECTION = Field.create("CLTTIMINGCORRECTION", 12, FieldType.INT16).setScale(0.01).setBaseOffset(796);
-	public static final Field TIMINGIATCORRECTION = Field.create("TIMINGIATCORRECTION", 14, FieldType.INT16).setScale(0.01).setBaseOffset(796);
-	public static final Field TIMINGPIDCORRECTION = Field.create("TIMINGPIDCORRECTION", 16, FieldType.INT16).setScale(0.01).setBaseOffset(796);
-	public static final Field ALIGNMENTFILL_AT_18 = Field.create("ALIGNMENTFILL_AT_18", 18, FieldType.INT8).setScale(1.0).setBaseOffset(796);
-	public static final Field DWELLVOLTAGECORRECTION = Field.create("DWELLVOLTAGECORRECTION", 20, FieldType.FLOAT).setBaseOffset(796);
-	public static final Field LUATIMINGADD = Field.create("LUATIMINGADD", 24, FieldType.FLOAT).setBaseOffset(796);
-	public static final Field LUATIMINGMULT = Field.create("LUATIMINGMULT", 28, FieldType.FLOAT).setBaseOffset(796);
+	public static final Field BASEDWELL = Field.create("BASEDWELL", 0, FieldType.FLOAT).setBaseOffset(828);
+	public static final Field SPARKDWELL = Field.create("SPARKDWELL", 4, FieldType.FLOAT).setBaseOffset(828);
+	public static final Field DWELLANGLE = Field.create("DWELLANGLE", 8, FieldType.FLOAT).setBaseOffset(828);
+	public static final Field CLTTIMINGCORRECTION = Field.create("CLTTIMINGCORRECTION", 12, FieldType.INT16).setScale(0.01).setBaseOffset(828);
+	public static final Field TIMINGIATCORRECTION = Field.create("TIMINGIATCORRECTION", 14, FieldType.INT16).setScale(0.01).setBaseOffset(828);
+	public static final Field TIMINGPIDCORRECTION = Field.create("TIMINGPIDCORRECTION", 16, FieldType.INT16).setScale(0.01).setBaseOffset(828);
+	public static final Field ALIGNMENTFILL_AT_18 = Field.create("ALIGNMENTFILL_AT_18", 18, FieldType.INT8).setScale(1.0).setBaseOffset(828);
+	public static final Field DWELLVOLTAGECORRECTION = Field.create("DWELLVOLTAGECORRECTION", 20, FieldType.FLOAT).setBaseOffset(828);
+	public static final Field LUATIMINGADD = Field.create("LUATIMINGADD", 24, FieldType.FLOAT).setBaseOffset(828);
+	public static final Field LUATIMINGMULT = Field.create("LUATIMINGMULT", 28, FieldType.FLOAT).setBaseOffset(828);
 	public static final Field[] VALUES = {
 	BASEDWELL,
 	SPARKDWELL,

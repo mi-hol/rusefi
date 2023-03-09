@@ -25,6 +25,8 @@
 #include "ac_control.h"
 #include "knock_logic.h"
 #include "idle_state_generated.h"
+#include "sent_state_generated.h"
+#include "dc_motors_generated.h"
 #include "idle_thread.h"
 #include "injector_model.h"
 #include "launch_control.h"
@@ -270,6 +272,9 @@ public:
 	void resetEngineSnifferIfInTestMode();
 
 	EngineState engineState;
+
+	dc_motors_s dc_motors;
+	sent_state_s sent_state;
 
 	/**
 	 * idle blip is a development tool: alternator PID research for instance have benefited from a repetitive change of RPM

@@ -104,7 +104,7 @@ typedef enum __attribute__ ((__packed__)) {
 
 	MRE_SUBARU_EJ18 = 37,
 
-	UNUSED_38 = 38,
+	DISCOVERY_PDM = 38,
 
 	PROTEUS_VW_B6 = 39,
 
@@ -125,6 +125,7 @@ typedef enum __attribute__ ((__packed__)) {
 	 */
 	FRANKENSO_MAZDA_MIATA_2003 = 47,
 
+    // todo: add wastegate case into HW CI
 	TEST_DC_WASTEGATE_DISCOVERY = 48,
 
 	FRANKENSO_QA_ENGINE = 49,
@@ -213,7 +214,7 @@ typedef enum __attribute__ ((__packed__)) {
 
 	HELLEN_154_HYUNDAI_COUPE_BK2 = 95,
 
-    ET_UNUSED96 = 96,
+    WASTEGATE_PROTEUS_TEST = 96,
     ET_UNUSED97 = 97,
     ET_UNUSED98 = 98,
 	ET_UNUSED_17 = 17,
@@ -510,8 +511,8 @@ typedef enum {
 
 	TT_SUBARU_EZ30 = 12,
 	TT_VVT_MAZDA_SKYACTIV = 13,
-	TT_MITSU_ONLY_TOP_BOTH_FRONTS = 29,
-	TT_MITSU_BOTH_BOTH = 34,
+	TT_MITSU_4G9x_CAM = 29,
+	TT_MITSU_4G63_CAM = 34,
 
 	// do not forget to edit "#define trigger_type_e_enum" line in integration/rusefi_config.txt file to propogate new value to rusefi.ini TS project
 	// do not forget to invoke "gen_config.bat" once you make changes to integration/rusefi_config.txt

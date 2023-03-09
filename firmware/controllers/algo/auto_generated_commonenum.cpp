@@ -1,6 +1,6 @@
 #include "global.h"
 #include "rusefi_enums.h"
-// was generated automatically by rusEFI tool  from rusefi_enums.h // by enum2string.jar tool on Tue Jan 24 01:29:38 UTC 2023
+// was generated automatically by rusEFI tool  from rusefi_enums.h // by enum2string.jar tool on Sun Feb 19 03:52:58 UTC 2023
 // see also gen_config_and_enums.bat
 
 
@@ -94,6 +94,15 @@ case SelectedGear::Park:
   return "Park";
 case SelectedGear::Reverse:
   return "Reverse";
+  }
+ return NULL;
+}
+const char *getSentEtbType(SentEtbType value){
+switch(value) {
+case SentEtbType::FORD_TYPE_1:
+  return "FORD_TYPE_1";
+case SentEtbType::GM_TYPE_1:
+  return "GM_TYPE_1";
   }
  return NULL;
 }
@@ -228,12 +237,18 @@ const char *getCan_baudrate_e(can_baudrate_e value){
 switch(value) {
 case B100KBPS:
   return "B100KBPS";
+case B125KBPS:
+  return "B125KBPS";
 case B1MBPS:
   return "B1MBPS";
 case B250KBPS:
   return "B250KBPS";
 case B500KBPS:
   return "B500KBPS";
+case B50KBPS:
+  return "B50KBPS";
+case B83KBPS:
+  return "B83KBPS";
   }
  return NULL;
 }
@@ -274,6 +289,21 @@ case BMW_e46:
   return "BMW_e46";
 case W202:
   return "W202";
+  }
+ return NULL;
+}
+const char *getDc_function_e(dc_function_e value){
+switch(value) {
+case DC_IdleValve:
+  return "DC_IdleValve";
+case DC_None:
+  return "DC_None";
+case DC_Throttle1:
+  return "DC_Throttle1";
+case DC_Throttle2:
+  return "DC_Throttle2";
+case DC_Wastegate:
+  return "DC_Wastegate";
   }
  return NULL;
 }
@@ -319,21 +349,6 @@ case LM_REAL_MAF:
   return "LM_REAL_MAF";
 case LM_SPEED_DENSITY:
   return "LM_SPEED_DENSITY";
-  }
- return NULL;
-}
-const char *getEtb_function_e(etb_function_e value){
-switch(value) {
-case ETB_IdleValve:
-  return "ETB_IdleValve";
-case ETB_None:
-  return "ETB_None";
-case ETB_Throttle1:
-  return "ETB_Throttle1";
-case ETB_Throttle2:
-  return "ETB_Throttle2";
-case ETB_Wastegate:
-  return "ETB_Wastegate";
   }
  return NULL;
 }
@@ -390,6 +405,8 @@ case GPPWM_LuaGauge2:
   return "GPPWM_LuaGauge2";
 case GPPWM_Map:
   return "GPPWM_Map";
+case GPPWM_Rpm:
+  return "GPPWM_Rpm";
 case GPPWM_Tps:
   return "GPPWM_Tps";
 case GPPWM_VVT_1E:
@@ -745,6 +762,8 @@ case VVT_MITSUBISHI_3A92:
   return "VVT_MITSUBISHI_3A92";
 case VVT_MITSUBISHI_4G63:
   return "VVT_MITSUBISHI_4G63";
+case VVT_MITSUBISHI_4G9x:
+  return "VVT_MITSUBISHI_4G9x";
 case VVT_MITSUBISHI_6G75:
   return "VVT_MITSUBISHI_6G75";
 case VVT_NISSAN_MR:

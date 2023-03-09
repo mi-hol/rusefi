@@ -403,6 +403,18 @@ float getOutputValueByName(const char *name) {
 			return engine->outputChannels.boostStatus.error;
 		case 308336833:
 			return engine->outputChannels.boostStatus.resetCounter;
+		case 1569192907:
+			return engine->outputChannels.wastegateDcStatus.pTerm;
+		case 1560891460:
+			return engine->outputChannels.wastegateDcStatus.iTerm;
+		case 1554961855:
+			return engine->outputChannels.wastegateDcStatus.dTerm;
+		case 206346164:
+			return engine->outputChannels.wastegateDcStatus.output;
+		case 1556089965:
+			return engine->outputChannels.wastegateDcStatus.error;
+		case 156247622:
+			return engine->outputChannels.wastegateDcStatus.resetCounter;
 		case 957036309:
 			return engine->outputChannels.auxSpeed1;
 		case 957036310:
@@ -669,6 +681,12 @@ float getOutputValueByName(const char *name) {
 			return engine->triggerCentral.triggerToothAngleError;
 		case 989545496:
 			return engine->triggerCentral.triggerIgnoredToothCount;
+		case 1242329357:
+			return engine->dc_motors.dcOutput0;
+		case -1236599226:
+			return engine->dc_motors.isEnabled0_int;
+		case 1691876092:
+			return engine->dc_motors.isEnabled0;
 	}
 	return EFI_ERROR_CODE;
 }

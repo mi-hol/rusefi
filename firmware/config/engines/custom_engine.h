@@ -9,17 +9,16 @@
 
 #include "engine_configuration.h"
 void setFrankensoConfiguration();
-void setFrankenso_01_LCD(engine_configuration_s *engineConfiguration);
-void disableLCD(engine_configuration_s *engineConfiguration);
+void setFrankenso_01_LCD();
+void disableLCD();
 void runSchedulingPrecisionTestIfNeeded(void);
+void setDiscoveryPdm();
 void setFrankensoBoardTestConfiguration();
 void setEtbTestConfiguration();
 void setTle8888TestConfiguration();
 void setL9779TestConfiguration();
 
 void setEepromTestConfiguration();
-
-void setTestQuadCam();
 
 void mreBoardNewTest();
 void mreSecondaryCan();
@@ -32,10 +31,11 @@ void mreBCM();
 void proteusBoardTest();
 void proteusLuaDemo();
 void proteusHarley();
+void proteusDcWastegateTest();
 
 void setTest33816EngineConfiguration();
 void setBoschHDEV_5_injectors();
-void setHellen72etb();
+
 void setRotary();
 void setVrThresholdTest();
 

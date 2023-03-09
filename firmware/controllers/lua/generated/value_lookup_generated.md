@@ -469,9 +469,6 @@ Disable the electronic throttle motor and DC idle motor for testing.\nThis mode 
 ### alignEngineSnifferAtTDC
 
 
-### useETBforIdleControl
-This setting allows the ETB to act as the idle air control valve and move to regulate the airflow at idle.
-
 ### idleIncrementalPidCic
 
 
@@ -740,10 +737,10 @@ Treat milliseconds value as duty cycle value, i.e. 0.5ms would become 50%
 This enables smart alternator control and activates the extra alternator settings.
 
 ### invertPrimaryTriggerSignal
-This setting flips the signal from the primary engine speed sensor.
+https://wiki.rusefi.com/Trigger-Configuration-Guide\nThis setting flips the signal from the primary engine speed sensor.
 
 ### invertSecondaryTriggerSignal
-This setting flips the signal from the secondary engine speed sensor.
+https://wiki.rusefi.com/Trigger-Configuration-Guide\nThis setting flips the signal from the secondary engine speed sensor.
 
 ### cutFuelOnHardLimit
 
@@ -1525,7 +1522,7 @@ null
 ### ALSMaxRPM
 
 
-### alsMaxDuration
+### ALSMaxDuration
 
 
 ### ALSMinCLT
@@ -1556,8 +1553,8 @@ null
 
 
 ### tpsSecondaryMaximum
-For Ford TPS, use 53%. For Toyota ETCS-i, use 65%
+For Ford TPS, use 53%. For Toyota ETCS-i, use ~65%
 
 ### ppsSecondaryMaximum
-For Toyota ETCS-i, use xxx%
+For Toyota ETCS-i, use ~69%
 

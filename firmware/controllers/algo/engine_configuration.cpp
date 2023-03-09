@@ -333,6 +333,10 @@ void setDefaultGppwmParameters() {
 		auto& cfg = engineConfiguration->gppwm[i];
 		chsnprintf(engineConfiguration->gpPwmNote[i], sizeof(engineConfiguration->gpPwmNote[0]), "GPPWM%d", i);
 
+		// Set default axes
+		cfg.loadAxis = GPPWM_Zero;
+		cfg.rpmAxis = GPPWM_Rpm;
+
 		cfg.pin = Gpio::Unassigned;
 		cfg.dutyIfError = 0;
 		cfg.onAboveDuty = 60;
@@ -762,6 +766,9 @@ void resetConfigurationExt(configuration_callback_t boardCallback, engine_type_e
 		break;
 #endif // HW_MICRO_RUSEFI
 #if HW_PROTEUS
+    case WASTEGATE_PROTEUS_TEST:
+        proteusDcWastegateTest();
+        break;
 	case PROTEUS_GM_LS_4:
 		setProteusGmLs4();
 		break;
@@ -866,6 +873,7 @@ void resetConfigurationExt(configuration_callback_t boardCallback, engine_type_e
 	case DEFAULT_FRANKENSO:
 		setFrankensoConfiguration();
 		break;
+	case DISCOVERY_PDM:
 	case TEST_ENGINE:
 		setTestCamEngineConfiguration();
 		break;
@@ -1029,14 +1037,14 @@ void setCrankOperationMode() {
 	engineConfiguration->skippedWheelOnCam = false;
 }
 
-void commonFrankensoAnalogInputs(engine_configuration_s *engineConfiguration) {
+void commonFrankensoAnalogInputs() {
 	/**
 	 * VBatt
 	 */
 	engineConfiguration->vbattAdcChannel = EFI_ADC_14;
 }
 
-void setFrankenso0_1_joystick(engine_configuration_s *engineConfiguration) {
+void setFrankenso0_1_joystick() {
 	
 	engineConfiguration->joystickCenterPin = Gpio::C8;
 	engineConfiguration->joystickAPin = Gpio::D10;
