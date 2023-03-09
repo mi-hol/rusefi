@@ -29,6 +29,8 @@
 		"firmware/ChibiOS/demos": true,
 	},
 	"cSpell.words": [
-		"IACV"
+		"IACV",
+		"Walbro"
 	],
+	"java.compile.nullAnalysis.mode": "automatic",
 }

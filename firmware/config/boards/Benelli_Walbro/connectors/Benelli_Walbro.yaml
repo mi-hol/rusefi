@@ -21,8 +21,7 @@ pins:
     # todo: '?? color yellow and "Output (low)" needs to be confirmed!''
     color: red/yellow
 
-# gp_pp	General purpose Push-Pull	General purpose push-pull (low and high side) output,
-# 600mA	Bipolar IDLE stepper (IACV)
+# General purpose push-pull (gp_pp)(low and high side) output, 600mA	Bipolar IDLE stepper (IACV)
   - pin: A4
     function: 'IACV (PinA) (IDLE stepper coil A) Note: polarity + or - ??) needs to be confirmed!'
     class: outputs
@@ -57,7 +56,7 @@ pins:
     color: yellow/black
 
   - pin: B1
-    function: Injector 1
+    function: 'Injector 1 !! Note: color: gray/green needs to be confirmed!'
     class: outputs
     type: inj
     # note color: English manual is unclear on second color! 
