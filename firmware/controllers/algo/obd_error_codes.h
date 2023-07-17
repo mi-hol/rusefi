@@ -14,16 +14,6 @@
 
 enum class ObdCode : uint16_t {
 	None = 0,
-//P0001 Fuel Volume Regulator Control Circuit/Open
-//P0002 Fuel Volume Regulator Control Circuit Range/Performance
-//P0003 Fuel Volume Regulator Control Circuit Low
-//P0004 Fuel Volume Regulator Control Circuit High
-//P0005 Fuel Shutoff Valve "A" Control Circuit/Open
-//P0006 Fuel Shutoff Valve "A" Control Circuit Low
-//P0007 Fuel Shutoff Valve "A" Control Circuit High
-//P0008 Engine Positions System Performance Bank 1
-//P0009 Engine Position System Performance Bank 2
-//P0010 "A" Camshaft Position Actuator Circuit (Bank 1)
 	//P0001 Fuel Volume Regulator Control Circuit/Open
 	//P0002 Fuel Volume Regulator Control Circuit Range/Performance
 	//P0003 Fuel Volume Regulator Control Circuit Low
@@ -1731,9 +1721,9 @@ enum class ObdCode : uint16_t {
 	CUSTOM_PARAM_RANGE = 6016,
 	CUSTOM_MAF_NEEDED = 6017,
 	CUSTOM_UNKNOWN_ALGORITHM = 6018,
-	CUSTOM_OBD_COIL_PIN_NOT_ASSIGNED = 6019,
+	CUSTOM_6019 = 6019,
 
-	CUSTOM_OBD_INJECTION_NO_PIN_ASSIGNED = 6020,
+	CUSTOM_6020 = 6020,
 	CUSTOM_OBD_UNEXPECTED_INJECTION_MODE = 6021,
 	CUSTOM_6022 = 6022,
 	CUSTOM_OBD_UNKNOWN_FIRING_ORDER = 6023,
@@ -1772,7 +1762,7 @@ enum class ObdCode : uint16_t {
 	CUSTOM_TOO_LONG_CRANKING_FUEL_INJECTION = 6054,
 	CUSTOM_INTERPOLATE_NAN = 6055,
 	ERROR_HISTO_NAME = 6056,
-	CUSTOM_AUX_OUT_OF_ORDER = 6057,
+	CUSTOM_6057 = 6057,
 	CUSTOM_OBD_HIGH_FREQUENCY = 6058,
 	CUSTOM_OBD_59 = 6059,
 
@@ -2123,16 +2113,16 @@ enum class ObdCode : uint16_t {
 	CUSTOM_INSTANT_MAP_DECODING = 6899,
 	STACK_USAGE_COMMUNICATION = 6900,
 	STACK_USAGE_MIL = 6901,
-	CUSTOM_6902 = 6902,
+	STACK_USAGE_BENCH = 6902,
 	STACK_USAGE_STATUS = 6903,
-	STACK_USAGE_MISC = 6904,
+	STACK_USAGE_4 = 6904,
 
 	// 8000-8050 logging errors
 	CUSTOM_OBD_MMC_ERROR = 8000,
 
 	CUSTOM_ERR_CAN_COMMUNICATION = 8900,
 
-	WATCH_DOG_SECONDS = 8901,
+	CUSTOM_8901 = 8901,
 
 	CUSTOM_ERR_CUSTOM_GAPS_BAD = 8999,
 	CUSTOM_ERR_TRIGGER_SYNC = 9000,
